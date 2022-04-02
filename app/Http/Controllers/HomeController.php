@@ -82,7 +82,11 @@ class HomeController extends Controller {
 
 			$this->data['content'] = \PostHelpers::formatContent($row->note);
 			$this->data['allslider'] = Homeslider::orderBy('id', 'DESC')->first();
+
 			$this->data['upcoming'] = Upcoming::orderBy('id', 'DESC')->get();
+			$this->data['services'] = DB::table('dit_services')->where('status', 1)->orderBy('id', 'DESC')->get();
+
+
 			$this->data['ourclients'] = Ourclients::where('status', 1)->orderBy('id', 'DESC')->get();
 			$this->data['ourgallary'] = Ourgallary::orderBy('id', 'DESC')->get();
 			$this->data['ourmission'] = Ourmission::where('status', 1)->orderBy('id', 'DESC')->limit(6)->get();
@@ -116,6 +120,8 @@ class HomeController extends Controller {
 				$this->data['content'] = \PostHelpers::formatContent($row->note);
 				$this->data['allslider'] = Homeslider::orderBy('id', 'DESC')->first();
 				$this->data['upcoming'] = Upcoming::orderBy('id', 'DESC')->get();
+				$this->data['services'] = DB::table('dit_services')->where('status', 1)->orderBy('id', 'DESC')->limit(6)->get();
+
 				$this->data['ourclients'] = Ourclients::where('status', 1)->orderBy('id', 'DESC')->get();
 				$this->data['ourgallary'] = Ourgallary::orderBy('id', 'DESC')->get();
 				$this->data['ourmission'] = Ourmission::where('status', 1)->orderBy('id', 'DESC')->limit(6)->get();

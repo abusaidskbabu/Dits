@@ -116,7 +116,7 @@ Route::post('sendmail','VmslController@contact_email')->name('contact.email');
 	Route::get('industry','VmslController@industry')->name('industry');
 	Route::get('industry/{id}','VmslController@industryDetails')->name('industry.details');
 
-	Route::get('service','VmslController@products')->name('products');
+	Route::get('services','VmslController@services')->name('services');
 	Route::get('consultancy','VmslController@consultancy')->name('consultancy');
 	Route::get('training','VmslController@training')->name('training');
 	
@@ -125,7 +125,6 @@ Route::post('sendmail','VmslController@contact_email')->name('contact.email');
 	Route::get('under-attack-hotline','VmslController@underattackhotline')->name('under.attack.hotline');
 	Route::post('under-attack-hotline/store','VmslController@underattackhotlineStore')->name('under.attack.hotline.store');
 	Route::post('contact/store','VmslController@contactStore')->name('contact.store');
-
 
 //Talent sourching
 Route::get('about','VmslController@about')->name('about');

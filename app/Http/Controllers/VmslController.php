@@ -43,12 +43,12 @@ class VmslController extends Controller{
         return view('layouts.default.template.company-section-post-details', $data);
     }
 
-    public function services(){
-        $data['title'] = 'Services';
-        $data['breadcum'] = DB::table('con_banner_slider')->where('type', 'section_post')->where('status', 1)->get();
-        $data['setting'] = Websitesettings::where('id', 1)->first();
-        return view('layouts.default.template.service', $data);
-    }
+    // public function services(){
+    //     $data['title'] = 'Services';
+    //     $data['breadcum'] = DB::table('con_banner_slider')->where('type', 'section_post')->where('status', 1)->get();
+    //     $data['setting'] = Websitesettings::where('id', 1)->first();
+    //     return view('layouts.default.template.service', $data);
+    // }
 
     public function services_single($id){
         $post = Ourservices::where('id', $id)->first();
@@ -449,13 +449,13 @@ class VmslController extends Controller{
     }
 
 
-    public function products(){
+    public function services(){
 		
-        $data['title'] = 'Service';
+        $data['title'] = 'Services';
         $data['breadcum'] = DB::table('con_banner_slider')->where('type', 'service')->where('status', 1)->first();
-        $data['products'] = DB::table('products_solution')->where('type', 'service')->where('status', 1)->get();
+        $data['services'] = DB::table('dit_services')->orderBy('id', 'DESC')->where('status', 1)->get();
         $data['setting'] = Websitesettings::where('id', 1)->first();
-        return view('layouts.default.template.products', $data);
+        return view('layouts.default.template.service', $data);
     }
 	
 	public function consultancy(){

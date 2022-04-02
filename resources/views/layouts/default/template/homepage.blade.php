@@ -225,141 +225,38 @@
                   <div class="col-12">
                       <div class="feature-list__two">
                           <div class="row">
-                              <div class="col-lg-4 col-md-6 wow move-up">
-                                  <div class="ht-box-icon style-02 single-svg-icon-box">
-                                      <div class="icon-box-wrap">
-                                          <div class="icon">
-                                              <div class="svg-icon" id="svg-1" data-svg-icon="assets/images/svg/linea-basic-heart.svg"></div>
-                                          </div>
-                                          <div class="content">
-                                              <h5 class="heading">IT Design </h5>
-                                              <div class="text">We provide the most responsive and functional IT design for companies and businesses worldwide.
-                                              </div>
-                                              <div class="feature-btn">
-                                                  <a href="#">
-                                                      <span class="button-text">Discover now</span>
-                                                      <i class="far fa-long-arrow-right"></i>
-                                                  </a>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-lg-4 col-md-6 wow move-up">
-                                  <div class="ht-box-icon style-02 single-svg-icon-box">
-                                      <div class="icon-box-wrap">
-                                          <div class="icon">
-                                              <div class="svg-icon" id="svg-2" data-svg-icon="assets/images/svg/linea-basic-case.svg"></div>
-                                          </div>
-                                          <div class="content">
-                                              <h5 class="heading">IT Management</h5>
-                                              <div class="text">It’s possible to simultaneously manage and transform information from one server to another.
-                                              </div>
-                                              <div class="feature-btn">
-                                                  <a href="#">
-                                                      <span class="button-text">Discover now</span>
-                                                      <i class="far fa-long-arrow-right"></i>
-                                                  </a>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="col-lg-4 col-md-6 wow move-up">
-                                  <div class="ht-box-icon style-02 single-svg-icon-box">
-                                      <!-- ht-box-icon Start -->
-                                      <div class="icon-box-wrap">
-                                          <div class="icon">
-                                              <div class="svg-icon" id="svg-3" data-svg-icon="assets/images/svg/linea-basic-alarm.svg"></div>
-                                          </div>
-                                          <div class="content">
-                                              <h5 class="heading">Data Security</h5>
-                                              <div class="text">We provide the most responsive and functional IT design for companies and businesses worldwide.
-                                              </div>
-                                              <div class="feature-btn">
-                                                  <a href="#">
-                                                      <span class="button-text">Discover now</span>
-                                                      <i class="far fa-long-arrow-right"></i>
-                                                  </a>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <!-- ht-box-icon End -->
-                                  </div>
-                              </div>
-                              <div class="col-lg-4 col-md-6 wow move-up">
-                                  <div class="ht-box-icon style-02 single-svg-icon-box">
-                                      <!-- ht-box-icon Start -->
-                                      <div class="icon-box-wrap">
-                                          <div class="icon">
-                                              <div class="svg-icon" id="svg-4" data-svg-icon="assets/images/svg/linea-basic-geolocalize-05.svg"></div>
-                                          </div>
-                                          <div class="content">
-                                              <h5 class="heading">Business Reform</h5>
-                                              <div class="text">We provide the most responsive and functional IT design for companies and businesses worldwide.
-                                              </div>
-                                              <div class="feature-btn">
-                                                  <a href="#">
-                                                      <span class="button-text">Discover now</span>
-                                                      <i class="far fa-long-arrow-right"></i>
-                                                  </a>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <!-- ht-box-icon End -->
-                                  </div>
-                              </div>
-                              <div class="col-lg-4 col-md-6 wow move-up">
-                                  <div class="ht-box-icon style-02 single-svg-icon-box">
-                                      <!-- ht-box-icon Start -->
-                                      <div class="icon-box-wrap">
-                                          <div class="icon">
-                                              <div class="svg-icon" id="svg-5" data-svg-icon="assets/images/svg/linea-ecommerce-money.svg"></div>
-                                          </div>
-                                          <div class="content">
-                                              <h5 class="heading">Infrastructure Plan</h5>
-                                              <div class="text">We provide the most responsive and functional IT design for companies and businesses worldwide.
-                                              </div>
-                                              <div class="feature-btn">
-                                                  <a href="#">
-                                                      <span class="button-text">Discover now</span>
-                                                      <i class="far fa-long-arrow-right"></i>
-                                                  </a>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <!-- ht-box-icon End -->
-                                  </div>
-                              </div>
-                              <div class="col-lg-4 col-md-6 wow move-up">
-                                  <div class="ht-box-icon style-02 single-svg-icon-box">
-                                      <!-- ht-box-icon Start -->
-                                      <div class="icon-box-wrap">
-                                          <div class="icon">
-                                              <div class="svg-icon" id="svg-6" data-svg-icon="assets/images/svg/linea-basic-spread-text-bookmark.svg"></div>
-                                          </div>
-                                          <div class="content">
-                                              <h5 class="heading">Firewall Advance</h5>
-                                              <div class="text">We provide the most responsive and functional IT design for companies and businesses worldwide.
-                                              </div>
-                                              <div class="feature-btn">
-                                                  <a href="#">
-                                                      <span class="button-text">Discover now</span>
-                                                      <i class="far fa-long-arrow-right"></i>
-                                                  </a>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <!-- ht-box-icon End -->
-                                  </div>
-                              </div>
+                              @if ($services)
+                              @foreach ($services as $data)
+                                <div class="col-lg-4 col-md-6 wow move-up">
+                                    <div class="ht-box-icon style-02 single-svg-icon-box">
+                                        <div class="icon-box-wrap">
+                                            <div class="icon">
+                                                {!! $data->service_icone !!}
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="heading"> {{\Illuminate\Support\Str::limit($data->service_name, 30)}}</h5>
+                                                <div class="text">
+                                                    {{\Illuminate\Support\Str::limit($data->short_description, 100)}}
+                                                </div>
+                                                <div class="feature-btn">
+                                                    <a href="{{ route('products.single', $data->id) }}">
+                                                        <span class="button-text">Read More</span>
+                                                        <i class="far fa-long-arrow-right"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              @endforeach
+                              @endif
                           </div>
                       </div>
                   </div>
                   <div class="col-lg-12">
                       <div class="feature-list-button-box mt-30 text-center">
-                          <a href="#" class="ht-btn ht-btn-md">Talk to a consultant</a>
-                          <a href="#" class="ht-btn ht-btn-md ht-btn--outline">Contact us now </a>
+                          <a href="{{ route('services') }}" class="ht-btn ht-btn-md">All Service</a>
+                          {{-- <a href="#" class="ht-btn ht-btn-md ht-btn--outline">Contact us now </a> --}}
                       </div>
                   </div>
               </div>

@@ -1,117 +1,145 @@
 
 @include('layouts.default.header')
 
-<!-- Breadcrumb Start -->
-<div style="background-color:#0000">
-    
-    <section class="breadcrumb-menu">
-        <article class="container">
+    <!-- breadcrumb-area start -->
+    <div class="breadcrumb-area">
+        <div class="container">
             <div class="row">
-               	<div class="col-md-12 col-sm-12 col-xs-12">
-                  	<div class="listmenu">
-                     	<div class="hero-list">
-                        	<nav aria-label="Breadcrumb">
-
-                        		<ol class="breadcrumb rmv-breadcrum navbar-left hidden-tab">
-						          	<li class="dropdown mega-dropdown">
-							  
-                                 		<a href="about.html" class="dropdown-toggle disabled" data-toggle="dropdown">
-                                    	{{ $title }}
-                                    	<i class="fa fa-chevron-circle-down reverseArrow" aria-hidden="true"></i>
-                                    
-                                 		</a>
-                              		</li>
-                           
-                        		</ol>
-                  			</nav>
-                     	</div>
-                  	</div>
-               	</div>
+                <div class="col-12">
+                    <div class="breadcrumb_box text-center">
+                        <h2 class="breadcrumb-title">IT Services</h2>
+                        <!-- breadcrumb-list start -->
+                        <ul class="breadcrumb-list">
+                            <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+                            <li class="breadcrumb-item active">IT Services</li>
+                        </ul>
+                        <!-- breadcrumb-list end -->
+                    </div>
+                </div>
             </div>
-        </article>
-    </section>
-</div>
+        </div>
+    </div>
+    <!-- breadcrumb-area end -->
+    <div id="main-wrapper">
+        <div class="site-wrapper-reveal">
+            <!--===========  feature-images-wrapper  Start =============-->
+            <div class="feature-images-wrapper section-space--ptb_100">
+                <div class="container">
 
-<div class="banner parbase l3-gradient aem-GridColumn aem-GridColumn--default--12">
-	<section id="sml_ht_home_banner">
-		<div id="main-cnt"> </div>
-    	<article class="container">
-    		<div class="row">
-      			<div class="col-md-9 col-sm-12 col-xs-12 ">
-		            <h1 class="h2-heading white-color l-top">
-						{{ $title }}
-		            </h1>
-  				</div>
-    		</div>
-  		</article>
-	</section>
-</div>
-
-{{-- <div class="freeflowhtml aem-GridColumn aem-GridColumn--default--12">
-    <section id="hero_slider">
-  		<article class="container-fluid slider">
-        	<div class="row"> 
-        		<div id="hero_slider_carousel" class="owl-carousel owl-theme">
-        			@foreach($breadcum as $row)
-	              		<div class="item @if($loop->iteration == 1) active @endif">
-	              			<div class="repeated-css bg-sapphire-medium">
-	              				<img src="{{url('/')}}/uploads/images/banner/{{ $row->image }}?pq=medium" class="slide-image hidden-xs">
-	              				<img class="slide-image visible-xs" src="{{url('/')}}/uploads/images/banner/{{ $row->image }}?pq=low" >
-	              			</div>
-	              			<div class="slider-overlay-amethyst"></div>
-	              			<div class="caption">
-	              				<div class="container">
-	              					<div class="row">
-	                    				<div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-						                    <h2 class="h2-heading white-color mb-xs-10">{{ $row->title }}</h2>
-	                    				</div>
-	              					</div>
-	              				</div>
-	              			</div>
-	        			</div>
-			        @endforeach
-        		</div>
-        	</div>
-  		</article>
-  	</section>
-</div> --}}
-
-
-
-<div class="freeflowhtml aem-GridColumn aem-GridColumn--default--12">
-    <section id="do_more" class="scroll-section pt75" style="background-image: url({{ asset('assets') }}/images/industreis-bg.31b7048e.webp);">
-  		<article class="container relative">
-    		<div class="row">
-	      		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center wow fadeInUp" data-wow-delay="0.3s"> 
-	      			<img src="{{ asset('assets') }}/images/18/vertical-line.png" alt="" />
-	        		<h2 class="h2-heading">{{ $title}}</h2>
-	        		<p class="col-lg-8 col-md-8 col-md-offset-2 col-sm-12 col-xs-12 para-txt light-gray mb50"></p>
-      			</div>
-    		</div>
-		    <div class="row mb50">
-		      <div class="grid-do_more col-md-12 col-sm-12 col-xs-12 wow fadeInUp" data-wow-delay="0.6s">
-				       @php
-		                $services = DB::table('dit_services')->where('status',1)->where('created_at',1)->get();
-		              @endphp
-		              @foreach($services as $row)
-		              <a href="{{ route('company.services.single', $row->id )}}" class="col-lg-3 col-md-3 col-sm-12 col-xs-12  p-3" style="height:100%;">
-                          <div  class="row service_col_border" style="height:300px;">
-                            <div class="col-lg-12 col-12 text-center">
-                              <h3 class=" text-uppercase ">{!! $row->service_icone !!}</h3>
-                              <h5 class=" text-uppercase ">{{$row->service_name}}</h5>
-                              <p class=" text-dark">{{ Str::limit($row->short_description, $limit = 100, $end = '...')}}</p>
-                              <span >Discover now <i class="fa fa-arrow-right"></i></span>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!-- section-title-wrap Start -->
+                            <div class="section-title-wrap text-center">
+                                <h3 class="heading">Preparing for your success, <br> we provide <span class="text-color-primary">  truly prominent IT solutions.</span></h3>
                             </div>
-                          </div>
-                        </a>
-		             @endforeach
-		      </div>
-		    </div>
-		    <div class="closeWrpr hidden-xs"></div>
-  		</article>
-	</section>
-</div>
+                            <!-- section-title-wrap Start -->
+                        </div>
+                    </div>
 
-@include('layouts.default.coll-us')
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="feature-images__one">
+                                <div class="row">
+									@if ($services)
+									@foreach ($services as $data)
+                                    <div class="col-lg-4 col-md-6 wow move-up">
+                                        <!-- ht-box-icon Start -->
+                                        <div class="ht-box-images style-01">
+                                            <div class="image-box-wrap">
+                                                <div class="box-image">
+                                                    {!! $data->service_icone !!}
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="heading">{{\Illuminate\Support\Str::limit($data->service_name, 30)}}</h5>
+                                                    <div class="text">{{\Illuminate\Support\Str::limit($data->short_description, 100)}} </div>
+                                                    <div class="circle-arrow">
+                                                        <div class="middle-dot"></div>
+                                                        <div class="middle-dot dot-2"></div>
+                                                        <a href="{{ route('products.single', $data->id) }}">
+                                                            <i class="far fa-long-arrow-right"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- ht-box-icon End -->
+                                    </div>
+									@endforeach
+									@endif
+                                </div>
+                            </div>
 
+                            <div class="section-under-heading text-center section-space--mt_80">Challenges are just opportunities in disguise. <a href="#">Take the challenge!</a></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--===========  feature-images-wrapper  End =============-->
+            <!--============ Contact Us Area Start =================-->
+            <div class="contact-us-area infotechno-contact-us-bg section-space--pt_100">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-7">
+                            <div class="image">
+                                <img class="img-fluid" src="assets/images/banners/home-cybersecurity-contact-bg-image.webp" alt="">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 ms-auto">
+                            <div class="contact-info style-two text-left">
+
+                                <div class="contact-info-title-wrap text-center">
+                                    <h3 class="heading  mb-10">4.9/5.0</h3>
+                                    <div class="ht-star-rating lg-style">
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                        <span class="fa fa-star"></span>
+                                    </div>
+                                    <p class="sub-text">by 700+ customers for 3200+ clients</p>
+                                </div>
+
+                                <div class="contact-list-item">
+                                    <a href="tel:190068668" class="single-contact-list">
+                                        <div class="content-wrap">
+                                            <div class="content">
+                                                <div class="icon">
+                                                    <span class="fal fa-phone"></span>
+                                                </div>
+                                                <div class="main-content">
+                                                    <h6 class="heading">Call for advice now!</h6>
+                                                    <div class="text">1900 68668</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="mailto:hello@mitech.com" class="single-contact-list">
+                                        <div class="content-wrap">
+                                            <div class="content">
+                                                <div class="icon">
+                                                    <span class="fal fa-envelope"></span>
+                                                </div>
+                                                <div class="main-content">
+                                                    <h6 class="heading">Say hello</h6>
+                                                    <div class="text">hello@mitech.com</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--============ Contact Us Area End =================-->
+
+        </div>
+
+
+
+{{-- @include('layouts.default.coll-us') --}}
 @include('layouts.default.footer')
