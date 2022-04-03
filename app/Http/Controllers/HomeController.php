@@ -85,7 +85,8 @@ class HomeController extends Controller {
 
 			$this->data['upcoming'] = Upcoming::orderBy('id', 'DESC')->get();
 			$this->data['services'] = DB::table('dit_services')->where('status', 1)->orderBy('id', 'DESC')->get();
-
+			$this->data['news'] = DB::table('dit_blocg_news')->where('status', 1)->orderBy('id', 'DESC')->get();
+			
 
 			$this->data['ourclients'] = Ourclients::where('status', 1)->orderBy('id', 'DESC')->get();
 			$this->data['ourgallary'] = Ourgallary::orderBy('id', 'DESC')->get();

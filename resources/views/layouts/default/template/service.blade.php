@@ -136,9 +136,7 @@
                 </div>
             </div>
             <!--============ Contact Us Area End =================-->
-
         </div>
-
 
 
 {{-- @include('layouts.default.coll-us') --}}
