@@ -120,7 +120,7 @@ Route::post('sendmail','VmslController@contact_email')->name('contact.email');
 	Route::get('consultancy','VmslController@consultancy')->name('consultancy');
 	Route::get('training','VmslController@training')->name('training');
 	
-	Route::get('service/single/{id}','VmslController@productsSingle')->name('products.single');
+	Route::get('service/single/{id}','VmslController@serviceSingle')->name('service.single');
 
 	Route::get('under-attack-hotline','VmslController@underattackhotline')->name('under.attack.hotline');
 	Route::post('under-attack-hotline/store','VmslController@underattackhotlineStore')->name('under.attack.hotline.store');

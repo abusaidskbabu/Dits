@@ -34,7 +34,7 @@
                   <div class="header position-relative">
                       <!-- brand logo -->
                       <div class="header__logo">
-                          <a href="index.html">
+                          <a href="/">
                               <img src="{{ asset('uploads/images/'.$setting->logo)}}" width="160" height="48" class="img-fluid" alt="">
                           </a>
                       </div>
@@ -47,7 +47,7 @@
 
                                   <ul>
                                       <li class="has-children has-children--multilevel-submenu">
-                                          <a href="#"><span>Home</span></a>
+                                          <a href="/"><span>Home</span></a>
                                           <ul class="submenu">
                                               <li><a href="index-infotechno.html"><span>Infotechno</span></a></li>
                                               <li><a href="index-processing.html"><span>Processing</span></a></li>

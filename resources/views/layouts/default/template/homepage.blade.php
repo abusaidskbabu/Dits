@@ -239,7 +239,7 @@
                                                     {{\Illuminate\Support\Str::limit($data->short_description, 100)}}
                                                 </div>
                                                 <div class="feature-btn">
-                                                    <a href="{{ route('products.single', $data->id) }}">
+                                                    <a href="{{ route('service.single', $data->id) }}">
                                                         <span class="button-text">Read More</span>
                                                         <i class="far fa-long-arrow-right"></i>
                                                     </a>
