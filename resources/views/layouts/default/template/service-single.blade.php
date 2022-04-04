@@ -13,6 +13,7 @@
     <div id="main-wrapper">
         <div class="site-wrapper-reveal">
             <div class="about-banner-wrap banner-space"  style="background-image: url('{{ asset('uploads/images/services/'.$serviceSingle->banner_image)}}');">
+                <div class="banner_overlay">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 m-auto">
@@ -23,6 +24,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
             <!--===========  feature-large-images-wrapper  Start =============-->
             <div class="feature-large-images-wrapper section-space--ptb_100">

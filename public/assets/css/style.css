@@ -12151,7 +12151,8 @@ ol {
   height: unset !important;
   width:  unset !important;
   background:  unset !important;
-  object-fit:  unset !important;;
+  object-fit:  unset !important;
+  width: 100% !important;
 }
 .blog-thumbnail a{
   width: 100% !important; 
@@ -16063,7 +16064,7 @@ blockquote {
 }
 .small_blog_img{
   padding-right: 0px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 } 
 .small_blog_text span{
   font-size: 12px !important;

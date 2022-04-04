@@ -53,19 +53,11 @@
                                 <div class="row">
                                     <div class="col-md-4 small_blog_img">
                                         @if(File::exists(public_path('/uploads/images/'.$post->image)))
-                                            <img class="img-fluid" src="/uploads/images/{{ $post->image }}" alt="Blog Images">
+                                            <a href="{{ url('posts/read/'.$post->alias) }}"><img class="img-fluid" src="/uploads/images/{{ $post->image }}" alt="Blog Images"></a>
                                         @else
-                                            <img class="img-fluid" src="/uploads/images/notfound.jpg" alt="">
+                                            <a href="{{ url('posts/read/'.$post->alias) }}"><img class="img-fluid" src="/uploads/images/notfound.jpg" alt=""></a>
                                         @endif
                                     </div>
-
-                                    
-                       
-                                     
-                                    
-
-
-
                                     <div class="col-md-8 small_blog_text">
                                       <b class="media-heading">
                                           <a href="{{ url('posts/read/'.$post->alias) }}">
@@ -73,10 +65,6 @@
                                         <div class="post-date">
                                             <span class="far fa-calendar meta-icon"></span>
                                             {{  date('M d, Y', strtotime($data->created)) }}
-                                        </div>
-                                        <div class="post-view">
-                                            <span class="meta-icon far fa-eye"></span>
-                                            {{ $post->views }} views
                                         </div>
                                         <div class="post-comments">
                                             <span class="far fa-comment-alt meta-icon"></span>

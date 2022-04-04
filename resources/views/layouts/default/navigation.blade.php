@@ -73,7 +73,7 @@
                                       </li>
                                  
                                       <li class="has-children--multilevel-submenu">
-                                          <a href="blog-list-large-image.html"><span>Blog</span></a>
+                                          <a href="/posts"><span>Blog</span></a>
                                       </li>
                                   </ul>
                               </nav>
