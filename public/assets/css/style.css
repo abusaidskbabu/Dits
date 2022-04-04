@@ -783,22 +783,30 @@ input[type="checkbox"] {
     - Breadvrumb  
 =================================*/
 .breadcrumb-area {
-  padding-top: 114px;
-  padding-bottom: 114px;
+  /* padding-top: 114px;
+  padding-bottom: 114px; */
   background-color: #f6f2ed;
   background-repeat: no-repeat;
   background-position: center center;
   border-bottom-width: 0px;
-  padding-top: 136px;
-  padding-bottom: 131px;
+  /* padding-top: 136px;
+  padding-bottom: 131px; */
   background-size: cover;
   z-index: 3;
   position: relative;
   /* background-image: url(../images/bg/title-bar-01-bg.webp); */
 }
+.banner_overlay{
+  padding-top: 114px;
+  padding-bottom: 114px;
+}
 
 @media only screen and (max-width: 767px), only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 992px) and (max-width: 1199px) {
-  .breadcrumb-area {
+  /* .breadcrumb-area {
+    padding-top: 80breadcrumb-areapx;
+    padding-bottom: 80px;
+  } */
+  .banner_overlay{
     padding-top: 80px;
     padding-bottom: 80px;
   }
@@ -844,7 +852,7 @@ input[type="checkbox"] {
 }
 
 .breadcrumb-list li.active {
-  color: #6D70A6;
+  color: #ffffff;
 }
 
 .page-pagination li {
@@ -12131,11 +12139,23 @@ ol {
 .single-blog-item.xs-list-blog-item:last-child {
   margin-bottom: 0;
 }
-
 .single-blog-item .post-feature img {
   border-radius: 5px;
+  height: 230px;
+  width: 100%;
+  background: #d5d2d2;
+  object-fit: contain;
 }
-
+#blog_single .single-blog-item .post-feature img {
+  border-radius: 5px;
+  height: unset !important;
+  width:  unset !important;
+  background:  unset !important;
+  object-fit:  unset !important;;
+}
+.blog-thumbnail a{
+  width: 100% !important; 
+}
 .single-blog-item .post-quote {
   position: relative;
   padding: 78px 40px 53px;
@@ -13912,6 +13932,20 @@ blockquote {
   vertical-align: middle;
   margin-right: 6px;
   border-radius: 50%;
+  height: 32px !important;
+}
+#sideblogs .post-blog-thumbnail .post-meta .post-author img {
+  width: 25px;
+  vertical-align: middle;
+  margin-right: 6px;
+  border-radius: 50%;
+  height: 25px !important;
+}
+.banner_overlay{
+  background: #0000;
+}
+.breadcrumb-title, .breadcrumb-list{
+  color: #fff;
 }
 
 .post-blog-thumbnail .post-meta div {
@@ -16022,4 +16056,15 @@ blockquote {
 }
 .box-image .fa{
   font-size: 40px;
+}
+
+.media-left img{
+  width: 100px !important;
+}
+.small_blog_img{
+  padding-right: 0px;
+  margin-bottom: 10px;
+} 
+.small_blog_text span{
+  font-size: 12px !important;
 }

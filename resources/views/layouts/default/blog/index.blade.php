@@ -1,126 +1,162 @@
-    <link href="{{ asset('frontend/default/js/owlcarousel/assets/owl.carousel.css')}}" rel="stylesheet">
-    <script type="text/javascript" src="{{ asset('frontend/default/js/owlcarousel/owl.carousel.min.js') }}"></script>
-<!--==========================
-  Headline Section
-============================-->
-@if( $mode =='all')
-<section id="headline" class="wow fadeInUp">
-  
-    <div class="owl-carousel headline-carousel">
-      @foreach( $headline as $hl)     
-        <div class="headline-item">         
-           
-          <img src="{{ $hl->image }}" alt="" lass="headline-img" >
-          <div class="headline-info">
-            <h3> {{ $hl->title }}</h3>
-            <h4> {{ $hl->sinopsis }} </h4>
-          </div>     
-        </div>
-      @endforeach
-    </div>     
-</section><!-- #Headline -->
-@else
 
-
-  <div class="container">   
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item " ><a href="{{ url('') }}"> Home </a></li>
-         <li class="breadcrumb-item " ><a href="{{ url('posts') }}"> Posts </a></li>
-         <li class="breadcrumb-item " aria-current="page" > {{ $categoryDetail->name }} </li>
-      </ol>
-    </nav>
-
-    <div class="section-header">
-      <h2>  Category : {{ $categoryDetail->name }} </h2>
-      
-    </div>
+    <!-- breadcrumb-area start -->
+    <div class="breadcrumb-area" style="background-image: url('{{ asset('uploads/images/banner/'.$breadcum->image)}}');">
+      <div class="banner_overlay">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <div class="breadcrumb_box text-center">
+                      <h2 class="breadcrumb-title">Blog</h2>
+                      <!-- breadcrumb-list start -->
+                      <ul class="breadcrumb-list">
+                          <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+                          <li class="breadcrumb-item active">{{ $categoryDetail->name }}</li>
+                      </ul>
+                      <!-- breadcrumb-list end -->
+                  </div>
+              </div>
+          </div>
+      </div>
+      </div>
   </div>
-@endif 
+  <!-- breadcrumb-area end -->
 
 
-<div class="container upcoming_title text-center" id="post_page">
-	<div class="wpo-section-title">
-		<h2>Events</h2>
-	</div>
-</div>
 
 
-<section id="blog" class="section">
-      <!-- Container Starts -->
-      <div class="container">  
- 
-        <!-- Row Starts -->
-        <div class="row">  
-          <div class="col-md-8 ">
-            @foreach( $posts as $post)        
-                <!-- Blog Item Starts -->
-                <div class="blog-item-wrapper hoy wow fadeIn animated" >
-                    <div class="row">
-                        <div class="col-md-4">
-                          <div class="blog-item-img">
-                            <a href="{{ url('posts/read/'.$post->alias) }}">
-                              @if(file_exists('./uploads/images/'.$post->image) && $post->image !='' )
-                              <img src="{{ asset('uploads/images/'.$post->image) }}" alt="" class="img-responisve">
-                              @else
-                              <img src="{{ asset('uploads/images/no-image.png') }}" alt="" class="img-responisve">
-                              @endif
-                            </a>   
+
+
+
+
+
+
+
+  <div id="main-wrapper">
+      <div class="site-wrapper-reveal">
+          <!--====================  Blog Area Start ====================-->
+          <div class="blog-pages-wrapper section-space--ptb_100">
+              <div class="container">
+                  <div class="row">
+                    @if ($posts)
+                    @foreach($posts as $post) 
+                      <div class="col-lg-4 col-md-6  mb-30 wow move-up">
+                          <!--======= Single Blog Item Start ========-->
+                          <div class="single-blog-item blog-grid">
+                              <!-- Post Feature Start -->
+                              <div class="post-feature blog-thumbnail">
+                                  <a href="{{ url('posts/read/'.$post->alias) }}">
+                                    @if(File::exists(public_path('uploads/images/'.$post->image)))
+                                        <img class="img-fluid" src="uploads/images/{{ $post->image }}" alt="Blog Images">
+                                    @else
+                                        <img src="uploads/images/notfound.jpg" alt="">
+                                    @endif
+                                  </a>
+                              </div>
+                              <!-- Post Feature End -->
+
+                              <!-- Post info Start -->
+                              <div class="post-info lg-blog-post-info">
+                                  <div class="post-meta">
+                                      <div class="post-date">
+                                          <span class="far fa-calendar meta-icon"></span>
+                                          {{ date("M j, Y " , strtotime($post->created)) }}
+                                      </div>
+                                  </div>
+
+                                  <h5 class="post-title font-weight--bold">
+                                      <a href="{{ url('posts/read/'.$post->alias) }}">{{ \Illuminate\Support\Str::limit($post->title, 40)   }}</a>
+                                  </h5>
+
+                                  <div class="post-excerpt mt-15">
+                                      {!! \Illuminate\Support\Str::limit($post->note, 100) !!}
+                                  </div>
+                                  <div class="btn-text">
+                                      <a href="{{ url('posts/read/'.$post->alias) }}">Read more <i class="ml-1 button-icon far fa-long-arrow-right"></i></a>
+                                  </div>
+                              </div>
+                              <!-- Post info End -->
                           </div>
-                        </div>
-                        
-                        <div class="col-md-8">  
+                          <!--===== Single Blog Item End =========-->
+                      </div>
+                      @endforeach
+                      @endif
+                   
 
-                            <div class="blog-item-text">
-                                <h3 class="small-title"><a href="{{ url('posts/read/'.$post->alias) }}">{{ $post->title }}</a></h3>
-                                <div class="section-tool text-left ">
-                                    <i class="fa fa-eye "></i>  <span>  Views (<b> {{ $post->views }} </b>)  </span>   
-                                    <i class="fa fa-user "></i>  <span>  {{ ucwords($post->username) }}  </span>   
-                                    <i class="icon-calendar3"></i>  <span> {{ date("M j, Y " , strtotime($post->created)) }} </span> 
-                                    <i class="fa fa-comment-o "></i>   <span>  {{ $post->comments }} comment(s)  </span> 
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet, adipisicing elit. Eos rerum dolorum, est voluptatem modi accusantium perspiciatis ...
-                                </p>
-                                <div class="blog-one-footer">
-                                    <a href="{{ url('posts/read/'.$post->alias) }}"> <button class="btn btn-info btn_theme">Read More</button> </a>             
-                                </div>
-                            </div>
-                        </div>  
-                    </div>    
-                </div><!-- Blog Item Wrapper Ends-->
-              @endforeach
-              
+
+                      <div class="col-lg-12 wow move-up">
+                          <div class="ht-pagination mt-30 pagination justify-content-center">
+                              <div class="pagination-wrapper">
+
+                                  {{-- <ul class="page-pagination">
+                                      <li><a class="prev page-numbers" href="#">Prev</a></li>
+                                      <li><a class="page-numbers current" href="#">1</a></li>
+                                      <li><a class="page-numbers" href="#">2</a></li>
+                                      <li><a class="next page-numbers" href="#">Next</a></li>
+                                  </ul> --}}
+                                  {!!  $posts->links() !!}
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
           </div>
-          
+          <!--====================  Blog Area End  ====================-->
 
-        
-    
-          <div class="col-md-4">
-              @include('layouts.default.blog.widget')
+
+
+
+
+
+
+
+
+
+
+          <!--========== Call to Action Area Start ============-->
+          <div class="cta-image-area_one section-space--ptb_80 cta-bg-image_one">
+              <div class="container">
+                  <div class="row align-items-center">
+                      <div class="col-xl-8 col-lg-7">
+                          <div class="cta-content md-text-center">
+                              <h3 class="heading text-white">Assess your business potentials and find opportunities <span class="text-color-secondary">for bigger success</span></h3>
+                          </div>
+                      </div>
+                      <div class="col-xl-4 col-lg-5">
+                          <div class="cta-button-group--one text-center">
+                              <a href="#" class="btn btn--white btn-one"><span class="btn-icon me-2"><i class="far fa-comment-alt-dots"></i></span> Let's talk</a>
+                              <a href="#" class="btn btn--secondary  btn-two"><span class="btn-icon me-2"><i class="far fa-info-circle"></i></span> Get info</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
           </div>
-        
-
-        </div><!-- Row Ends -->
-        <div class="row text-center">
-        {!!  $posts->links() !!}
-        </div>
-      </div><!-- Container Ends -->
-    </section>
+          <!--========== Call to Action Area End ============-->
 
 
 
-    <script type="text/javascript">
-      $(function(){
-        $("ul.pagination li a").addClass("page-link")
 
-          // Testimonials carousel (uses the Owl Carousel library)
-          $(".headline-carousel").owlCarousel({
-            autoplay: true,
-            dots: true,
-            loop: true,
-            responsive: { 0: { items: 1 }, 768: { items: 2 }, 900: { items: 3 } }
-          });
 
-      })
-    </script>
+
+
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{-- @include('layouts.default.blog.widget') --}}
+             

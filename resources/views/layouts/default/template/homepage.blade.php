@@ -1,4 +1,4 @@
-<div id="main-wrapper">
+<div id="main-wrapper" class="homepage">
   <div class="site-wrapper-reveal section-space--pt__120">
       <!--============ Service Hero Start ============-->
       <div class="service-hero-wrapper service-hero-space service-hero-bg">
@@ -617,123 +617,89 @@
                       <div class="col-lg-6">
                           <div class="single-blog-lg-item wow move-up">
                               <!-- Post Feature Start -->
-                              <a href="blog-post-layout-one.html">
-                                  <div class="post-blog-thumbnail">
-                                      <img class="img-fluid" src="assets/images/blog/blog-03-540x330.webp" alt="Blog Images">
-                                      <div class="post-meta mt-20">
-                                          <div class="post-author">
-                                              <img class="img-fluid avatar-96" src="assets/images/team/admin.webp" alt=""> Harry Ferguson
-                                          </div>
-                                          <div class="post-date">
-                                              <span class="far fa-calendar meta-icon"></span>
-                                              January 18, 2019
-                                          </div>
-                                      </div>
-
-                                  </div>
-                              </a>
-                              <!-- Post Feature End -->
-
-                              <!-- Post info Start -->
-                              <div class="post-info lg-blog-post-info mt-20">
+                            @if($blogs)
+                            @foreach ($blogs as $key => $data)
+                                @if($key == 0) 
+                                    <a href="posts/read/{{ $data->alias }}">
+                                        <div class="post-blog-thumbnail">
+                                            @if(File::exists(public_path('uploads/images/'.$data->image)))
+                                                <img class="img-fluid" src="uploads/images/{{ $data->image }}" alt="Blog Images">
+                                            @else
+                                                <img src="uploads/images/notfound.jpg" alt="">
+                                            @endif
+                                            <div class="post-meta mt-20">
+                                                <div class="post-author">
+                                                    @if(File::exists(public_path('uploads/users/'.Helper::get_user_by_id($data->userid)->avatar)))
+                                                        <img class="img-fluid avatar-96" src="uploads/users/{{ Helper::get_user_by_id($data->userid)->avatar }}" alt=""> 
+                                                    @else
+                                                        <img src="uploads/users/17.png" alt="">
+                                                    @endif
+                                                    {{ Helper::get_user_by_id($data->userid)->username }}
+                                                </div>
+                                                <div class="post-date">
+                                                    <span class="far fa-calendar meta-icon"></span>
+                                                    {{  date('M d, Y', strtotime($data->created)) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                <div class="post-info lg-blog-post-info mt-20">
                                   <h4 class="post-title">
-                                      <a href="blog-post-layout-one.html">5 Ways Technology Has Improved Business Today</a>
+                                      <a href="posts/read/{{ $data->alias }}">{{ \Illuminate\Support\Str::limit($data->title, 55)   }}</a>
                                   </h4>
                                   <div class="post-excerpt mt-15">
-                                      <p>They play a role in making operations more seamless, bridging the gap between authorities, consumers and businesses. …</p>
+                                      <p>{!! \Illuminate\Support\Str::limit($data->note, 150) !!}</p>
                                   </div>
                                   <div class="btn-text mt-15">
-                                      <a href="#">Read more <i class="ml-1 button-icon far fa-long-arrow-right"></i></a>
+                                      <a href="posts/read/{{ $data->alias }}">Read more <i class="ml-1 button-icon far fa-long-arrow-right"></i></a>
                                   </div>
-                              </div>
-                              <!-- Post info End -->
+                                </div>
+                            @endif
+                        @endforeach
+                        @endif
+
+
                           </div>
                       </div>
-                      <div class="col-lg-6 blog-list-service">
-                          <div class="single-blog-lg-list wow move-up">
-                              <!-- Post Feature Start -->
-                              <a href="blog-post-layout-one.html">
-                                  <div class="post-blog-thumbnail">
-                                      <img class="img-fluid" src="assets/images/blog/blog-01-480x312.webp" alt="Blog Images">
-                                      <div class="post-meta mt-20">
-                                          <div class="post-author">
-                                              <img class="img-fluid avatar-96" src="assets/images/team/admin.webp" alt=""> Harry Ferguson
-                                          </div>
-                                      </div>
-                                  </div>
-                              </a>
-                              <!-- Post Feature End -->
-
-                              <!-- Post info Start -->
-                              <div class="post-info lg-blog-post-info">
-                                  <div class="post-meta mb-10">
-                                      <div class="post-date">
-                                          <span class="far fa-calendar meta-icon"></span>
-                                          January 18, 2019
-                                      </div>
-                                  </div>
-                                  <h5 class="post-title">
-                                      <a href="blog-post-layout-one.html">Ideas for High Returns on Investment</a>
-                                  </h5>
-                              </div>
-                              <!-- Post info End -->
-                          </div>
-                          <div class="single-blog-lg-list wow move-up">
-                              <!-- Post Feature Start -->
-                              <a href="blog-post-layout-one.html">
-                                  <div class="post-blog-thumbnail">
-                                      <img class="img-fluid" src="assets/images/blog/blog-08-480x312.webp" alt="Blog Images">
-                                      <div class="post-meta mt-20">
-                                          <div class="post-author">
-                                              <img class="img-fluid avatar-96" src="assets/images/team/admin-02.webp" alt=""> Harry Ferguson
-                                          </div>
-                                      </div>
-                                  </div>
-                              </a>
-                              <!-- Post Feature End -->
-
-                              <!-- Post info Start -->
-                              <div class="post-info lg-blog-post-info">
-                                  <div class="post-meta mb-10">
-                                      <div class="post-date">
-                                          <span class="far fa-calendar meta-icon"></span>
-                                          February 21, 2019
-                                      </div>
-                                  </div>
-                                  <h5 class="post-title">
-                                      <a href="blog-post-layout-one.html">How Technology Made Businesses More Efficient</a>
-                                  </h5>
-                              </div>
-                              <!-- Post info End -->
-                          </div>
-                          <div class="single-blog-lg-list wow move-up">
-                              <!-- Post Feature Start -->
-                              <a href="blog-post-layout-one.html">
-                                  <div class="post-blog-thumbnail">
-                                      <img class="img-fluid" src="assets/images/blog/blog-07-480x312.webp" alt="Blog Images">
-                                      <div class="post-meta mt-20">
-                                          <div class="post-author">
-                                              <img class="img-fluid avatar-96" src="assets/images/team/admin-02.webp" alt=""> Harry Ferguson
-                                          </div>
-                                      </div>
-                                  </div>
-                              </a>
-                              <!-- Post Feature End -->
-
-                              <!-- Post info Start -->
-                              <div class="post-info lg-blog-post-info">
-                                  <div class="post-meta mb-10">
-                                      <div class="post-date">
-                                          <span class="far fa-calendar meta-icon"></span>
-                                          January 18, 2019
-                                      </div>
-                                  </div>
-                                  <h5 class="post-title">
-                                      <a href="blog-post-layout-one.html">Data Secure on Transitioning to a New Office</a>
-                                  </h5>
-                              </div>
-                              <!-- Post info End -->
-                          </div>
+                      <div class="col-lg-6 blog-list-service" id="sideblogs">
+                        @if($blogs)
+                        @foreach ($blogs as $key => $data)
+                        @if($key != 0)
+                            <div class="single-blog-lg-list wow move-up">
+                                <a href="blog-post-layout-one.html">
+                                    <div class="post-blog-thumbnail">
+                                        @if(File::exists(public_path('uploads/images/'.$data->image)))
+                                            <img class="img-fluid" src="uploads/images/{{ $data->image }}" alt="Blog Images">
+                                        @else
+                                            <img src="uploads/images/notfound.jpg" alt="">
+                                        @endif
+                                        <div class="post-meta mt-20">
+                                            <div class="post-author">
+                                                @if(File::exists(public_path('uploads/users/'.Helper::get_user_by_id($data->userid)->avatar)))
+                                                <img class="img-fluid avatar-96" src="uploads/users/{{ Helper::get_user_by_id($data->userid)->avatar }}" alt=""> 
+                                                @else
+                                                    <img src="uploads/users/17.png" alt="">
+                                                @endif
+                                                {{ Helper::get_user_by_id($data->userid)->username }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="post-info lg-blog-post-info">
+                                    <div class="post-meta mb-10">
+                                        <div class="post-date">
+                                            <span class="far fa-calendar meta-icon"></span>
+                                            {{  date('M d, Y', strtotime($data->created)) }}
+                                        </div>
+                                    </div>
+                                    <h5 class="post-title">
+                                        <a href="posts/read/{{ $data->alias }}">{{ \Illuminate\Support\Str::limit($data->title, 55)   }}</a>
+                                    </h5>
+                                </div>
+                            </div>
+                        @endif
+                        @endforeach
+                        @endif
                       </div>
                   </div>
               </div>

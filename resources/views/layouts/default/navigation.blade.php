@@ -78,8 +78,6 @@
                                   </ul>
                               </nav>
                           </div>
-
-                          <div class="header-search-form-two">
                               <form action="#" class="search-form-top-active">
                                   <div class="search-icon" id="search-overlay-trigger">
                                       <a href="javascript:void(0)">

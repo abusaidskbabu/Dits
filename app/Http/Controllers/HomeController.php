@@ -86,7 +86,7 @@ class HomeController extends Controller {
 			$this->data['upcoming'] = Upcoming::orderBy('id', 'DESC')->get();
 			$this->data['services'] = DB::table('dit_services')->where('status', 1)->orderBy('id', 'DESC')->get();
 			$this->data['news'] = DB::table('dit_blocg_news')->where('status', 1)->orderBy('id', 'DESC')->get();
-			
+			$this->data['blogs'] = DB::table('tb_pages')->where('status', 'enable')->where('pagetype', 'post')->orderBy('pageID', 'DESC')->limit(4)->get();
 
 			$this->data['ourclients'] = Ourclients::where('status', 1)->orderBy('id', 'DESC')->get();
 			$this->data['ourgallary'] = Ourgallary::orderBy('id', 'DESC')->get();
@@ -122,7 +122,7 @@ class HomeController extends Controller {
 				$this->data['allslider'] = Homeslider::orderBy('id', 'DESC')->first();
 				$this->data['upcoming'] = Upcoming::orderBy('id', 'DESC')->get();
 				$this->data['services'] = DB::table('dit_services')->where('status', 1)->orderBy('id', 'DESC')->limit(6)->get();
-
+				$this->data['blogs'] = DB::table('tb_pages')->where('status', 'enable')->where('pagetype', 'post')->orderBy('pageID', 'DESC')->limit(4)->get();
 				$this->data['ourclients'] = Ourclients::where('status', 1)->orderBy('id', 'DESC')->get();
 				$this->data['ourgallary'] = Ourgallary::orderBy('id', 'DESC')->get();
 				$this->data['ourmission'] = Ourmission::where('status', 1)->orderBy('id', 'DESC')->limit(6)->get();
@@ -257,8 +257,9 @@ class HomeController extends Controller {
 				->select('tb_pages.*','tb_users.username',\DB::raw('COUNT(commentID) AS comments'))
 				->leftJoin('tb_users','tb_users.id','tb_pages.userid')
 				->leftJoin('tb_comments','tb_comments.pageID','tb_pages.pageID')		
-				->leftJoin('tb_categories','tb_categories.cid','tb_pages.cid')					
-				->where('pagetype','post');
+				->leftJoin('tb_categories','tb_categories.cid','tb_pages.cid')	
+				->orderBy('tb_pages.pageID', 'DESC')				
+				->where('tb_pages.pagetype','post');
 	
 				if( $category !=''  ) {
 					$mode = 'category';
@@ -277,6 +278,7 @@ class HomeController extends Controller {
 		$this->data['headline']		= Post::lists('headline');
 		$this->data['categories']	= Post::categories();
 		$this->data['setting'] = Websitesettings::where('id', 1)->first();
+		$this->data['breadcum'] = DB::table('con_banner_slider')->where('type', 'blogs')->where('status', 1)->first();
 		$this->data['mode']			= $mode;
 		$this->data['pages'] = 'layouts.'.config('sximo.cnf_theme').'.blog.index';	
 		$page = 'layouts.'.config('sximo.cnf_theme').'.index';
@@ -285,30 +287,29 @@ class HomeController extends Controller {
 
 	public function read( Request $request , $read = '')  {
 
-		$row = Post::read( $read);
+		$row = Post::read($read);
 		if($row->cid){
 	//	print_r($posts);exit;
 		$comments = Post::comments($row->pageID );
 		$data = [
 			'title'	=> $row->title ,
-			'posts'	=> $row ,
+			'post'	=> $row ,
 			'comments'	=>  $comments ,
 			'pages' => 'layouts.'.config('sximo.cnf_theme').'.blog.view',
 			'popular'	=> Post::lists('popular') , 
-			'categories'	=> Post::categories()
+			'categories'	=> Post::categories(),
+			'breadcum'	=> DB::table('con_banner_slider')->where('type', 'blogs')->where('status', 1)->first(),
 		];
 		$page = 'layouts.'.config('sximo.cnf_theme').'.index';
 		return view( $page , $data);
 		}else{
 		   return redirect('/posts');
 		}
-
 	}
 
 
 
-	public function comment( Request $request)
-	{
+	public function comment( Request $request){
 		$rules = array(
 			'comments'	=> 'required'
 		);
