@@ -7,8 +7,8 @@
                   <div class="col-lg-12 col-md-12 m-auto">
                       <div class="service-hero-wrap wow move-up">
                           <div class="service-hero-text text-center">
-                              <h3 class="text-white">Responsive Design </h3>
-                              <h1 class="font-weight--reguler text-white mb-30">for IT Services</h1>
+                              <h3 class="text-white">Welcome To</h3>
+                              <h1 class="font-weight--reguler text-white mb-30">DHAKA IT SOLUTION</h1>
 
                               <div class="service-solution-form-wrap me-auto ms-auto">
                                   <form action="#" method="post">
