@@ -289,19 +289,25 @@ class HomeController extends Controller {
 
 		$row = Post::read($read);
 		if($row->cid){
-	//	print_r($posts);exit;
-		$comments = Post::comments($row->pageID );
-		$data = [
-			'title'	=> $row->title ,
-			'post'	=> $row ,
-			'comments'	=>  $comments ,
-			'pages' => 'layouts.'.config('sximo.cnf_theme').'.blog.view',
-			'popular'	=> Post::lists('popular') , 
-			'categories'	=> Post::categories(),
-			'breadcum'	=> DB::table('con_banner_slider')->where('type', 'blogs')->where('status', 1)->first(),
-		];
-		$page = 'layouts.'.config('sximo.cnf_theme').'.index';
-		return view( $page , $data);
+			$comments = Post::comments($row->pageID);
+
+			$data = [
+				'setting' => Websitesettings::where('id', 1)->first(),
+				'title'	=> $row->title,
+				'post'	=>$row,
+				'pageid'=> $row->pageID,
+				'comments'	=>  $comments ,
+				'pages' => 'layouts.'.config('sximo.cnf_theme').'.blog.view',
+				'popular'	=> Post::lists('popular') , 
+				'categories'	=> Post::categories(),
+				'breadcum'	=> DB::table('con_banner_slider')->where('type', 'blogs')->where('status', 1)->first(),
+			];
+
+			// var_dump($row);
+			// exit;
+
+			$page = 'layouts.'.config('sximo.cnf_theme').'.index';
+			return view($page , $data);
 		}else{
 		   return redirect('/posts');
 		}

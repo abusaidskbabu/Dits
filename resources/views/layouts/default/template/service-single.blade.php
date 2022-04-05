@@ -12,13 +12,13 @@
 
     <div id="main-wrapper">
         <div class="site-wrapper-reveal">
-            <div class="about-banner-wrap banner-space"  style="background-image: url('{{ asset('uploads/images/services/'.$serviceSingle->banner_image)}}');">
+            <div class="about-banner-wrap"  style="background-image: url('{{ asset('uploads/images/services/'.$serviceSingle->banner_image)}}');">
                 <div class="banner_overlay">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-8 m-auto">
                             <div class="about-banner-content text-center">
-                                <h1 class="mb-15 text-white">Services Details</h1>
+                                <h1 class="mb-15 text-white">Service </h1>
                                 <h5 class="font-weight--normal text-white"> {{ $serviceSingle->service_name }}</h5>
                             </div>
                         </div>

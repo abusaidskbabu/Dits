@@ -34,9 +34,11 @@
                   <div class="header position-relative">
                       <!-- brand logo -->
                       <div class="header__logo">
-                          <a href="/">
-                              <img src="{{ asset('uploads/images/'.$setting->logo)}}" width="160" height="48" class="img-fluid" alt="">
-                          </a>
+                        @if(File::exists(public_path('/uploads/images/'.$setting->logo)))
+                            <a href="/"><img class="img-fluid avatar-96" src="/uploads/images/{{ $setting->logo }}" alt="">  </a>
+                        @else
+                            <a href="/"><img src="{{url('/')}}/uploads/images/backend-logo.jpg" alt=""> </a>
+                        @endif
                       </div>
 
                       <div class="header-right">
@@ -53,7 +55,7 @@
                                       <a href="/"><span>About Us</span></a>
                                       </li>
                                       <li class="has-children--multilevel-submenu">
-                                          <a href="/"><span>Services</span></a>
+                                          <a href="/services"><span>Services</span></a>
                                       </li>
                                       <li class="has-children--multilevel-submenu">
                                           <a href="/"><span>Portfolio</span></a>

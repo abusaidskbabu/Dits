@@ -8,7 +8,7 @@
                         <h2 class="breadcrumb-title">Blog Details</h2>
                         <!-- breadcrumb-list start -->
                         <ul class="breadcrumb-list">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
                             <li class="breadcrumb-item active">Blog Details</li>
                         </ul>
                         <!-- breadcrumb-list end -->
@@ -76,6 +76,14 @@
                                 @endif
                             </div>
                         </div>
+
+
+
+
+                        @if($pageid)
+                        @php
+                            $post = \DB::table('tb_pages')->where('pageID', $pageid)->first();
+                        @endphp
                         <div class="col-lg-8 order-lg-1 order-1">
                             <div class="main-blog-wrap">
                                 <div class="single-blog-item">
@@ -125,6 +133,7 @@
                                 <!--===== Single Blog Item End =========-->
                             </div>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div>

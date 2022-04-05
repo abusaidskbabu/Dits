@@ -7,7 +7,12 @@
                     <div class="row footer-widget-wrapper">
                         <div class="col-lg-4 col-md-6 col-sm-6 footer-widget">
                             <div class="footer-widget__logo mb-30">
-                                <img src="{{ asset('uploads/images/'.$setting->logo)}}" width="160" height="48" class="img-fluid" alt="">
+
+                                @if(File::exists(public_path('/uploads/images/'.$setting->logo)))
+                                    <a href="/"><img width="160" height="48" class="img-fluid"  src="/uploads/images/{{ $setting->logo }}" alt="">  </a>
+                                @else
+                                    <a href="/"><img src="{{url('/')}}/uploads/images/backend-logo.jpg" width="160" height="48" class="img-fluid" alt=""> </a>
+                                @endif
                             </div>
                             <ul class="footer-widget__list">
                                 <li>58 Howard Street #2 San Francisco, CA 941</li>

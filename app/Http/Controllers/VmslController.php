@@ -507,14 +507,20 @@ class VmslController extends Controller{
     }
 
     public function contactStore(Request $request){
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'message' => 'required',
+            'email' => 'required|email',
+        ]);
+
         $data = new contactrequest();
         $data->name   = $request->name;
         $data->email    = $request->email;
         $data->subject = $request->subject;
         $data->message  = $request->message;
         $data->save();  
-        
-        return redirect()->back()->with('message', 'Success..! Soon we will come back to you.');
+        Session::flash('success', 'Success..! Contact request message sent.');
+        return redirect()->back();
     }
 
     public function roles(){
