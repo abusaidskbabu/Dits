@@ -1,5 +1,5 @@
 <div id="main-wrapper" class="homepage">
-  <div class="site-wrapper-reveal section-space--pt__120">
+    <div class="site-wrapper-reveal section-space--pt__120">
       <!--============ Service Hero Start ============-->
       <div class="service-hero-wrapper service-hero-space service-hero-bg">
           <div class="container">
@@ -202,12 +202,6 @@
       </div>
 
       <!--===========  Our Company History Start  End =============-->
-
-
-
-
-
-
       <!--===========  feature-icon-wrapper  Start =============-->
       <div class="feature-icon-wrapper bg-gray section-space--ptb_100">
           <div class="container">
@@ -407,15 +401,6 @@
           </div>
       </div>
       <!--====================  End of gradation process area  ====================-->
-
-
-
-
-
-
-
-
-
 
 
 
@@ -855,5 +840,5 @@
           </div>
       </div>
       <!--====================  End of brand logo slider area  ====================-->
-  </div>
+    </div>
 

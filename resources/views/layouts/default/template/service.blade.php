@@ -4,22 +4,22 @@
     <!-- breadcrumb-area start -->
     <div class="breadcrumb-area" style="background-image: url('{{ asset('uploads/images/banner/'.$breadcum->image)}}');">
         <div class="banner_overlay">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="breadcrumb_box text-center">
-                        <h2 class="breadcrumb-title">{{ $breadcum->title }}</h2>
-                        <!-- breadcrumb-list start -->
-                        <ul class="breadcrumb-list">
-                            <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-                            <li class="breadcrumb-item active">{{ $breadcum->title }}</li>
-                        </ul>
-                        <!-- breadcrumb-list end -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="breadcrumb_box text-center">
+                            <h2 class="breadcrumb-title">{{ $breadcum->title }}</h2>
+                            <!-- breadcrumb-list start -->
+                            <ul class="breadcrumb-list">
+                                <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+                                <li class="breadcrumb-item active">{{ $breadcum->title }}</li>
+                            </ul>
+                            <!-- breadcrumb-list end -->
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <!-- breadcrumb-area end -->
     <div id="main-wrapper">

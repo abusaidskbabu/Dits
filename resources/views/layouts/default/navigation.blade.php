@@ -52,7 +52,7 @@
                                         <a href="/"><span>Home</span></a>
                                     </li>
                                     <li class="has-children--multilevel-submenu">
-                                      <a href="/"><span>About Us</span></a>
+                                      <a href="{{ route('about') }}"><span>About Us</span></a>
                                       </li>
                                       <li class="has-children--multilevel-submenu">
                                           <a href="/services"><span>Services</span></a>
