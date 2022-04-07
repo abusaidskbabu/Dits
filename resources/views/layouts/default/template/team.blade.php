@@ -1,143 +1,114 @@
 @include('layouts.default.header')
 
-<style>
-.ti-facebook:hover {
-    background: none !important;
-    color: #003fd6 !important;
-}    
-</style>
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <div class="popup_doal modal_content" >
 
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
-<!--modal end-->
 
-<div class="pddig_botm" id="team_section">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="wpo-section-title">
-                    {{-- <span>Meet Our Team</span> --}}
-                    <h2>Governing Body</h2>
+
+
+
+
+
+    <!-- breadcrumb-area start -->
+    <div class="breadcrumb-area" style="background-image: url('{{ asset('uploads/images/banner/'.$breadcum->image)}}');">
+        <div class="banner_overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="breadcrumb_box text-center">
+                        <h1 class="breadcrumb-title text-color-primary">Our Team</h1>
+                        <!-- breadcrumb-list start -->
+                        <ul class="breadcrumb-list">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item active">Our Team</li>
+                        </ul>
+                        <!-- breadcrumb-list end -->
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="row team_span">
-            @php
-            $team = DB::table('con_team')->where('status', 1)->where('category', 1)->orderBy('sort_number', 'ASC')->get();
-            @endphp
-            @if ($team)
-            @foreach ($team as $data)
-            <div class="col-lg-3 col-md-3 col-sm-6 col">
-                <div class="wpo-team-wrap mygobernig_body">
-                    <div class="wpo-team-img">
-                        <img src="{{ asset('uploads') }}/images/team/{{$data->image}}" alt="">
-                    </div>
-                    <div class="wpo-team-content">
-                        <div class="wpo-team-text-sub">
-                            <h2>{{$data->name}}</h2>
-                            <span>{{$data->position}}</span>
-                            <ul>
-                                @if($data->facebook)
-                                    <li><a target="_blank" href="{{$data->facebook}}"><i class="ti-facebook"></i></a></li>
-                                @endif
-                                @if($data->twitter)
-                                    <li><a target="_blank" href="{{$data->twitter}}"><i class="ti-twitter"></i></a></li>
-                                @endif
-                                @if($data->linkedin)
-                                    <li><a target="_blank" href="{{$data->linkedin}}"><i class="ti-linkedin"></i></a></li>
-                                @endif
-                                @if($data->email)
-                                    <li><a href="mailto:{{$data->email}}"><i class="ti-email"></i></a></li>
-                                @endif
-                            </ul>
-                            <button data-id="{{$data->id}}" data-toggle="modal" data-target="#exampleModal" class="btn btn-info btn_site">Details</button>
+    </div>
+    </div>
+    <!-- breadcrumb-area end -->
+
+
+
+
+
+    <div id="main-wrapper">
+        <div class="site-wrapper-reveal">
+            <div class="bg-white">
+           
+
+                <!-- ============ Team Member Wrapper Start =============== -->
+                <div class="team-member-wrapper section-space--pt_100 section-space--pb_30 bg-gray">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="section-title section-space--mb_60 text-center">
+                                    <h3 class="heading">We pride ourselves on having a team <br> of <span class="text-color-primary">highly-skilled</span> experts</h3>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-            @endif
-        </div>
-    </div>
-</div>
-<!-- wpo-team-area end -->
-
-
-
-
-
-<div class="">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="wpo-section-title">
-                    {{-- <span>Meet Our Team</span> --}}
-                    <h2>Team Member</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row team_span">
-            @php
-            $team = DB::table('con_team')->where('status', 1)->where('category', 2)->orderBy('sort_number', 'ASC')->get();
-            @endphp
-            @if ($team)
-            @foreach ($team as $data)
-            <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                <div class="wpo-team-wrap mygobernig_body">
-                    <div class="wpo-team-img">
-                        <img src="{{ asset('uploads') }}/images/team/{{$data->image}}" alt="">
-                    </div>
-                    <div class="wpo-team-content">
-                        <div class="wpo-team-text-sub">
-                            <h2>{{$data->name}}</h2>
-                            <span>{{$data->position}}</span>
-                            <ul>
-                                @if($data->facebook)
-                                    <li><a href="{{$data->facebook}}"><i class="ti-facebook"></i></a></li>
-                                @endif
-                                @if($data->twitter)
-                                    <li><a href="{{$data->twitter}}"><i class="ti-twitter"></i></a></li>
-                                @endif
-                                @if($data->linkedin)
-                                    <li><a href="{{$data->linkedin}}"><i class="ti-linkedin"></i></a></li>
-                                @endif
-                                @if($data->email)
-                                    <li><a href="{{$data->email}}"><i class="ti-email"></i></a></li>
-                                @endif
-                            </ul>
-                            <button data-id="{{$data->id}}" data-toggle="modal" data-target="#exampleModal" class="btn btn-info btn_site">Details</button>
+                        <div class="row ht-team-member-style-two">
+                            @if ($members)
+                            @foreach ($members as $data)
+                            <div class="col-lg-3 col-md-3 wow move-up">
+                                <div class="grid-item">
+                                    <div class="ht-team-member">
+                                        <div class="team-image">
+                                            <img class="img-fluid" src="uploads/images/team/{{$data->image }}" alt="">
+                                            <div class="social-networks">
+                                                <div class="inner">
+                                                    <a target="_blank" href="#" class=" hint--bounce  hint--top hint--theme-two" aria-label="Facebook"><i class="fab fa-facebook"></i>
+                                                    </a>
+                                                    <a target="_blank" href="#" class=" hint--bounce hint--top hint--theme-two" aria-label="Twitter"><i class="fab fa-twitter"></i>
+                                                    </a>
+                                                    <a target="_blank" href="#" class=" hint--bounce hint--top hint--theme-two" aria-label="Instagram"><i class="fab fa-instagram"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="team-info text-center">
+                                            <h5 class="name">{{$data->name }} </h5>
+                                            <div class="position">{{$data->position }}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                            @endif
                         </div>
+                     
+
                     </div>
                 </div>
+                <!-- ============ Team Member Wrapper End =============== -->
+
+
             </div>
-            @endforeach
-            @endif
+        </div>
+
+
+
+
+
+
+
+
+    
+
+
+
+    </div>
+
+
+    <div class="footer-area-wrapper bg-gray foote_padding">
+        <div class="footer-area section-space--ptb_80">
+            
+        </div>
+        <div class="footer-copyright-area section-space--pb_30">
+            
         </div>
     </div>
-</div>
-
-
-
-
-
-
-
-
-
 
 
 

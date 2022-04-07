@@ -52,10 +52,19 @@
                                         <a href="/"><span>Home</span></a>
                                     </li>
                                     <li class="has-children--multilevel-submenu">
-                                      <a href="{{ route('about') }}"><span>About Us</span></a>
+                                      
                                       </li>
+
+                                      <li class="has-children has-children--multilevel-submenu">
+                                        <a href="#"><span>About</span></a>
+                                        <ul class="submenu">
+                                            <li><a href="{{ route('about') }}"><span>About Us</span></a></li>
+                                            <li><a href="{{ route('team') }}"><span>Our Team</span></a></li>
+                                        </ul>
+                                    </li>
+
                                       <li class="has-children--multilevel-submenu">
-                                          <a href="/services"><span>Services</span></a>
+                                          <a href="{{ route('services') }}"><span>Services</span></a>
                                       </li>
                                       <li class="has-children--multilevel-submenu">
                                           <a href="/"><span>Portfolio</span></a>
@@ -63,16 +72,7 @@
                                       <li class="has-children--multilevel-submenu">
                                           <a href="/"><span>Projects</span></a>
                                       </li>
-                                      <li class="has-children has-children--multilevel-submenu">
-                                          <a href="#"><span>IT solutions</span></a>
-                                          <ul class="submenu">
-                                              <li><a href="it-services.html"><span>IT Services</span></a></li>
-                                              <li><a href="managed-it-service.html"><span>Managed IT Services</span></a></li>
-                                              <li><a href="industries.html"><span>Industries</span></a></li>
-                                              <li><a href="business-solution.html"><span>Business solution</span></a></li>
-                                              <li><a href="it-services-details.html"><span>IT Services Details</span></a></li>
-                                          </ul>
-                                      </li>
+
                                  
                                       <li class="has-children--multilevel-submenu">
                                           <a href="/posts"><span>Blog</span></a>

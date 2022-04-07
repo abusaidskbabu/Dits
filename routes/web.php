@@ -116,7 +116,7 @@ Route::post('sendmail','VmslController@contact_email')->name('contact.email');
 	Route::get('industry','VmslController@industry')->name('industry');
 	Route::get('industry/{id}','VmslController@industryDetails')->name('industry.details');
 
-	Route::get('services','VmslController@services')->name('services');
+	Route::get('all-services','VmslController@servicespage')->name('services');
 	Route::get('consultancy','VmslController@consultancy')->name('consultancy');
 	Route::get('training','VmslController@training')->name('training');
 	
@@ -127,7 +127,7 @@ Route::post('sendmail','VmslController@contact_email')->name('contact.email');
 	Route::post('contact/store','VmslController@contactStore')->name('contact.store');
 
 //Talent sourching
-Route::get('about','VmslController@about')->name('about');
+Route::get('about-us','VmslController@about')->name('about');
 Route::get('user-profile','VmslController@userProfile')->name('user.profile');
 Route::get('why/us','VmslController@whyUs')->name('whyUs');
 Route::get('faqs','VmslController@faqs')->name('faqs');
@@ -140,7 +140,7 @@ Route::get('research','VmslController@research')->name('research');
 Route::get('publications','VmslController@publications')->name('publications');
 
 Route::get('our-activities','VmslController@whatwedo')->name('what-we-do');
-Route::get('team','VmslController@team')->name('team');
+Route::get('our-team','VmslController@team')->name('team');
 Route::get('donation','VmslController@donation')->name('donation');
 Route::get('photos','VmslController@gallary')->name('full.gallery');
 Route::get('video-gallery','VmslController@Vediogallary')->name('video.gallery');

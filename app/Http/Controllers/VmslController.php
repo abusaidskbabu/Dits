@@ -450,7 +450,7 @@ class VmslController extends Controller{
     }
 
 
-    public function services(){
+    public function servicespage(){
         $data['title'] = 'Services';
         $data['breadcum'] = DB::table('con_banner_slider')->where('type', 'service')->where('status', 1)->first();
         $data['services'] = DB::table('dit_services')->orderBy('id', 'DESC')->where('status', 1)->get();
@@ -586,8 +586,14 @@ class VmslController extends Controller{
     }
 
     public function team(){
-        $data['title'] = 'Team';
-        $data['setting'] = Websitesettings::where('id', 1)->first();
+        $data['title'] = 'Our Tema';
+        $data['breadcum'] = DB::table('con_banner_slider')->where('type', 'overview')->where('status', 1)->first();
+        $data['about'] = DB::table('tbl_about_us')->where('status', 1)->first();
+		$data['ourclients'] = Ourclients::where('status', 1)->orderBy('id', 'DESC')->get();
+		$data['testimonials'] =DB::table('dit_testimonials')->where('status', 1)->get();
+		$data['setting'] = Websitesettings::where('id', 1)->first();
+
+        $data['members'] = DB::table('con_team')->where('status', 1)->orderBy('sort_number', 'ASC')->get();
         return view('layouts.default.template.team', $data); 
     }
 

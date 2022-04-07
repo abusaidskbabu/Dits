@@ -875,7 +875,16 @@
       @include('layouts.default.section.client')
       <!--====================  End of brand logo slider area  ====================-->
     </div>
-
+    <!--====================  footer area ====================-->
+    <div class="footer-area-wrapper bg-gray foote_padding">
+        <div class="footer-area section-space--ptb_80">
+            
+        </div>
+        <div class="footer-copyright-area section-space--pb_30">
+            
+        </div>
+    </div>
+    <!--====================  End of footer area  ====================-->
 
     
 
