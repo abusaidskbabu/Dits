@@ -372,6 +372,7 @@ class VmslController extends Controller{
         $data['breadcum'] = DB::table('con_banner_slider')->where('type', 'overview')->where('status', 1)->first();
         $data['about'] = DB::table('tbl_about_us')->where('status', 1)->first();
 		$data['ourclients'] = Ourclients::where('status', 1)->orderBy('id', 'DESC')->get();
+		$data['testimonials'] =DB::table('dit_testimonials')->where('status', 1)->get();
 		$data['setting'] = Websitesettings::where('id', 1)->first();
 		return view('layouts.default.template.about', $data);
     }

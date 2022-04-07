@@ -11066,8 +11066,8 @@ ol {
 }
 
 .testimonial-slider__author .designation:before {
-  content: ' / ';
-  padding: 0 5px;
+  /* content: ' / ';
+  padding: 0 5px; */
 }
 
 .testimonial-slider__one {
