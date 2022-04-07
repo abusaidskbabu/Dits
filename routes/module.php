@@ -234,4 +234,9 @@ Route::resource('underattackrequest','UnderattackrequestController');
 Route::resource('contactrequest','ContactrequestController');
 // End Routes for contactrequest 
 
+                    
+// Start Routes for ourtestimonials 
+Route::resource('ourtestimonials','OurtestimonialsController');
+// End Routes for ourtestimonials 
+
                     ?>

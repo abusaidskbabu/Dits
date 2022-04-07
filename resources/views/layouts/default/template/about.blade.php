@@ -1,384 +1,835 @@
 @include('layouts.default.header')
-    <!-- Breadcrumb Start -->
-<style type="text/css">
-    .hovereffect {
-  width: 100%;
-  height: 100%;
-  float: left;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  cursor: default;
-}
 
-.hovereffect .overlay {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-}
 
-.hovereffect img {
-  display: block;
-  position: relative;
-  -webkit-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  transform: scale(1.1);
-  -webkit-transition: all 0.35s;
-  transition: all 0.35s;
-}
-
-.hovereffect:hover img {
-  -webkit-transform: scale(1);
-  -ms-transform: scale(1);
-  transform: scale(1);
-  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.7" /><feFuncG type="linear" slope="0.7" /><feFuncB type="linear" slope="0.7" /></feComponentTransfer></filter></svg>#filter');
-  filter: brightness(0.7);
-  -webkit-filter: brightness(0.7);
-}
-
-.hovereffect h2 {
-  text-transform: uppercase;
-  color: #fff;
-  text-align: center;
-  font-size: 17px;
-  padding: 10px;
-  width: 100%;
-}
-
-.hovereffect:hover h2 {
-  opacity: 0;
-  filter: alpha(opacity=0);
-  -webkit-transform: translate3d(-50%,-50%,0) scale3d(0.8,0.8,1);
-  transform: translate3d(-50%,-50%,0) scale3d(0.8,0.8,1);
-}
-
-.hovereffect a.info {
-  display: inline-block;
-  text-decoration: none;
-  padding: 7px 14px;
-  text-transform: uppercase;
-  color: #fff;
-  border: 1px solid #fff;
-  margin: 50px 0 0 0;
-  background-color: transparent;
-}
-
-.hovereffect a.info:hover {
-  box-shadow: 0 0 5px #fff;
-}
-
-.hovereffect .rotate {
-  -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-
-.hovereffect hr {
-  width: 50%;
-  opacity: 0;
-  filter: alpha(opacity=0);
-}
-
-.hovereffect  hr:nth-child(2) {
-  -webkit-transform: translate3d(-50%,-50%,0) rotate(0deg) scale3d(0,0,1);
-  transform: translate3d(-50%,-50%,0) rotate(0deg) scale3d(0,0,1);
-}
-
-.hovereffect  hr:nth-child(3) {
-  -webkit-transform: translate3d(-50%,-50%,0) rotate(90deg) scale3d(0,0,1);
-  transform: translate3d(-50%,-50%,0) rotate(90deg) scale3d(0,0,1);
-}
-
-.hovereffect h2, .hovereffect hr {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: translate3d(-50%,-50%,0);
-  transform: translate3d(-50%,-50%,0);
-  -webkit-transform-origin: 50%;
-  -ms-transform-origin: 50%;
-  transform-origin: 50%;
-  background-color: transparent;
-  margin: 0px;
-}
-
-.group1, .group2 {
-  left: 50%;
-  position: absolute;
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: translate3d(-50%,-50%,0);
-  transform: translate3d(-50%,-50%,0);
-  -webkit-transform-origin: 50%;
-  -ms-transform-origin: 50%;
-  transform-origin: 50%;
-  background-color: transparent;
-  margin: 0px;
-  padding: 0px;
-}
-
-.group1 {
-  top: 40%;
-}
-
-.group2 {
-  top: 60%;
-}
-
-.hovereffect p {
-  width: 30%;
-  text-transform: none;
-  font-size: 15px;
-  line-height: 2;
-}
-
-.hovereffect p a {
-  color: #fff;
-}
-
-.hovereffect p a:hover,
-.hovereffect p a:focus {
-  opacity: 0.6;
-  filter: alpha(opacity=60);
-}
-
-.hovereffect  a i {
-  opacity: 0;
-  filter: alpha(opacity=0);
-  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-  transition: opacity 0.35s, transform 0.35s;
-  padding: 10px;
-  font-size: 20px;
-}
-
-.group1 a:first-child i {
-  -webkit-transform: translate3d(-60px,-60px,0) rotate(45deg) scale(2);
-  transform: translate3d(-60px,-60px,0) rotate(45deg) scale(2);
-}
-
-.group1 a:nth-child(2) i {
-  -webkit-transform: translate3d(60px,-60px,0) rotate(45deg) scale(2);
-  transform: translate3d(60px,-60px,0)  rotate(45deg) scale(2);
-}
-
-.group2 a:first-child i {
-  -webkit-transform: translate3d(-60px,60px,0) rotate(45deg) scale(2);
-  transform: translate3d(-60px,60px,0) rotate(45deg) scale(2);
-}
-
-.group2 a:nth-child(2) i {
-  -webkit-transform: translate3d(60px,60px,0)  rotate(45deg) scale(2);
-  transform: translate3d(60px,60px,0)  rotate(45deg) scale(2);
-}
-
-.hovereffect:hover hr:nth-child(2) {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  -webkit-transform: translate3d(-50%,-50%,0) rotate(0deg) scale3d(1,1,1);
-  transform: translate3d(-50%,-50%,0) rotate(0deg) scale3d(1,1,1);
-}
-
-.hovereffect:hover hr:nth-child(3) {
-  opacity: 1;
-  filter: alpha(opacity=100);
-  -webkit-transform: translate3d(-50%,-50%,0) rotate(90deg) scale3d(1,1,1);
-  transform: translate3d(-50%,-50%,0) rotate(90deg) scale3d(1,1,1);
-}
-
-.hovereffect:hover .group1 i:empty, .hovereffect:hover .group2 i:empty {
-  -webkit-transform: translate3d(0,0,0);
-  transform: translate3d(0,0,0) rotate(45deg) scale(1);
-  opacity: 1;
-  filter: alpha(opacity=100);
-}
-</style>
-<div style="background-color:#0000">
-    
-    <section class="breadcrumb-menu">
-        <article class="container">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="listmenu">
-                        <div class="hero-list">
-                            <nav aria-label="Breadcrumb">
-
-                                <ol class="breadcrumb rmv-breadcrum navbar-left hidden-tab">
-                                    <li class="dropdown mega-dropdown">
-                              
-                                        <a href="about.html" class="dropdown-toggle disabled" data-toggle="dropdown">
-                                        {{ $title }}
-                                        <i class="fa fa-chevron-circle-down reverseArrow" aria-hidden="true"></i>
-                                    
-                                        </a>
-                                    </li>
-                           
-                                </ol>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </article>
-    </section>
-</div>
-
-<div class="banner parbase @if(empty($breadcum->image)) l3-gradient aem-GridColumn @endif aem-GridColumn--default--12" @if(!empty($breadcum->image)) style="background-image: url('{{url('/')}}/uploads/images/banner/{{$breadcum->image}}'); background-repeat: no-repeat;background-position: center;" @endif>
-    <section id="sml_ht_home_banner">
-        <div id="main-cnt"> </div>
-        <article class="container">
-            <div class="row">
-                <div class="col-md-9 col-sm-12 col-xs-12 ">
-                    <h1 class="h2-heading white-color l-top">
-                        {{ $title }}
-                    </h1>
-                </div>
-            </div>
-        </article>
-    </section>
-</div>
-
-         <!-- Intro Section -->
-        <div class="intro-section-about-page d-flex h-100 mt50 ">
-            <div class="base-content-intro align-self-center w-100">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center wow fadeInUp" data-wow-delay="0.3s"> 
-                          <img src="{{ asset('assets') }}/images/18/vertical-line.png" alt="">
-                          <h2 class="h2-heading black-color">{{ $title }}</h2>
-                          
-                        </div>
-                        <div class="col-lg-6 mt50 wow fadeInUp" data-wow-delay="0.6s">
-                            <div class="content-intro">
-                                {!! $about->about !!}
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="images-page-about mt50 wow fadeInUp" data-wow-delay="0.9s">
-                              <img src="{{url('/')}}/uploads/images/{{ $about->image }}" alt="" width="100%" class="img-fluid">
-                            </div>
+<div id="main-wrapper">
+    <div class="site-wrapper-reveal">
+        <div class="about-banner-wrap banner-space about-us-bg">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 m-auto">
+                        <div class="about-banner-content text-center">
+                            <h1 class="mb-15 text-white">About Mitech</h1>
+                            <h5 class="font-weight--normal text-white">Mitech specializes in technological and IT-related services such as product engineering, warranty management, building cloud, infrastructure, network, etc. </h5>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End Intro Section -->
+        <!--===========  feature-large-images-wrapper  Start =============-->
+        <div class="feature-large-images-wrapper section-space--ptb_100">
+            <div class="container">
 
-         <!-- Our Team Section -->
-        <div class="the-team mt50 bg-amethyst-medium">
-            <div class="title-page">
-                <div class="container">
-                    <div class="row mt50">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center wow fadeInUp" data-wow-delay="0.3s"> 
-                          <img src="{{ asset('assets') }}/images/18/vertical-line.png" alt="">
-                          <h2 class="h2-heading black-color">Our Team</h2>
-                          
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- section-title-wrap Start -->
+                        <div class="section-title-wrap text-center section-space--mb_60">
+                            <h6 class="section-sub-title mb-20">Our company</h6>
+                            <h3 class="heading">We run all kinds of IT services that <br> vow your <span class="text-color-primary"> success</span></h3>
+                        </div>
+                        <!-- section-title-wrap Start -->
+                    </div>
+                </div>
+
+                <div class="cybersecurity-about-box section-space--pb_70">
+                    <div class="row">
+                        <div class="col-lg-4 offset-lg-1">
+                            <div class="modern-number-01">
+                                <h2 class="heading  me-5"><span class="mark-text">38</span>Years’ Experience in IT</h2>
+                                <h6 class="heading mt-30">More About Our Success Stories</h6>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 offset-lg-1">
+                            <div class="cybersecurity-about-text">
+                                <div class="text">Mitech specializes in technological and IT-related services such as product engineering, warranty management, building cloud, infrastructure, network, etc. We put a strong focus on the needs of your business to figure out solutions that best fits your demand and nail it.</div>
+                                <div class="button-text">
+                                    <a href="#" class="btn-text">
+                                        Discover now
+                                        <span class="button-icon ml-1">
+                                <i class="far fa-long-arrow-right"></i>
+                            </span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="group-tour-guide pb50">
-                <div class="container wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="owl-carousel owl-theme" id="card-team">
-                        @foreach(DB::table('con_team')->where('status', 1)->orderBy('sort_number','ASC')->get() as $row)
-                            <div class="item">
-                                <div class="card card-team animated-Fade-In-1 text-center">
-                                    <div class="hovereffect">
-                                        <img class="img-responsive" src="{{url('/')}}/uploads/images/team/{{ $row->image }}" alt="" style="height: 250px;width:100%;">
-                                        <div class="overlay">
-                                            <h2></h2>
-                                            <div class="rotate">
-                                                <p class="group1">
-                                                    <a href="{{ $row->twitter }}">
-                                                        <i class="fa fa-twitter"></i>
-                                                    </a>
-                                                    <a href="{{ $row->facebook }}">
-                                                        <i class="fa fa-facebook"></i>
-                                                    </a>
-                                                </p>
-                                                    <hr>
-                                                    <hr>
-                                                <p class="group2">
-                                                    <a href="{{ $row->linkedin }}">
-                                                        <i class="fab fa-linkedin-in"></i>
-                                                    </a>
-                                                    <a href="mailto:{{ $row->email }}">
-                                                        <i class="fa fa-envelope"></i>
-                                                    </a>
-                                                </p>
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="feature-images__six">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6 wow move-up">
+                                    <!-- ht-box-icon Start -->
+                                    <div class="ht-box-images style-06">
+                                        <div class="image-box-wrap">
+                                            <div class="box-image">
+                                                <div class="default-image">
+                                                    <img class="img-fulid" src="assets/images/icons/mitech-box-image-style-06-image-01-120x120.webp" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="heading">What we can do?</h5>
+                                                <div class="text">We put a strong focus on the needs of your business to figure out solutions that best fits your demand and nail it.
+                                                </div>
+                                                <a href="#" class="box-images-arrow">
+                                                    <span class="button-text">Discover now</span>
+                                                    <i class="far fa-long-arrow-right"></i>
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card-body">
-                                        <h4>{{ $row->name }}</h4>
-                                        <h5 class="card-title"><b>{{ $row->position }}</b></h5>
+                                    <!-- ht-box-icon End -->
+                                </div>
+                                <div class="col-lg-4 col-md-6 wow move-up">
+                                    <!-- ht-box-icon Start -->
+                                    <div class="ht-box-images style-06">
+                                        <div class="image-box-wrap">
+                                            <div class="box-image">
+                                                <div class="default-image">
+                                                    <img class="img-fulid" src="assets/images/icons/mitech-box-image-style-06-image-02-120x120.webp" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="heading">Become our partners?</h5>
+                                                <div class="text">Our preventive and progressive approach will help you take the lead while addressing possible threats in managing data.
+                                                </div>
+                                                <a href="#" class="box-images-arrow">
+                                                    <span class="button-text">Discover now</span>
+                                                    <i class="far fa-long-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ht-box-icon End -->
+                                </div>
+                                <div class="col-lg-4 col-md-6 wow move-up">
+                                    <!-- ht-box-icon Start -->
+                                    <div class="ht-box-images style-06">
+                                        <div class="image-box-wrap">
+                                            <div class="box-image">
+                                                <div class="default-image">
+                                                    <img class="img-fulid" src="assets/images/icons/mitech-box-image-style-06-image-03-120x120.webp" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="content">
+                                                <h5 class="heading">Need a hand?</h5>
+                                                <div class="text">Our support team is available 24/7 a day, 7 days a week and can get ready for solving any of your situational rising problems.
+                                                </div>
+                                                <a href="#" class="box-images-arrow">
+                                                    <span class="button-text">Discover now</span>
+                                                    <i class="far fa-long-arrow-right"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ht-box-icon End -->
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="section-under-heading text-center section-space--mt_60">Challenges are just opportunities in disguise. <a href="#">Take the challenge!</a></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--===========  feature-large-images-wrapper  End =============-->
+
+
+
+
+        <!--========= About Resources Wrapper Start ===========-->
+        <div class="about-resources-wrapper">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-2 order-lg-1">
+                        <div class="resources-left-box">
+                            <div class="resources-inner">
+                                <h6 class="sub-title mb-20">Resources</h6>
+                                <h3 class="heading">Get a copy of brochure on <span class="text-color-primary"> Brand New IT Tech.</span></h3>
+                                <div class="button mt-30">
+                                    <a href="#" class="ht-btn ht-btn-md">Download now (3MB)</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-1 order-lg-2">
+                        <div class="resources-right-box">
+                            <div class="resources-right-inner text-center">
+                                <div class="resources-images">
+                                    <img class="img-fluid" src="assets/images/banners/managed-it-services-book-cover.webp" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--========= About Resources Wrapper End ===========-->
+        <!--========= About Delivering Wrapper Start ===========-->
+        <div class="about-delivering-wrapper section-space--ptb_100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title-wrap text-center section-space--mb_20">
+                            <h3 class="heading">We excel in delivering <br>optimal solutions.</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="delivering-optimal-wrap">
+                            <div class="list-item">
+                                <div class="marker"></div>
+                                <div class="title-wrap">
+                                    <h5 class="title"> Warranty Management IT </h5>
+                                    <div class="desc">Our service offerings enhance customer experience throughout secure &amp; highly functional end-to-end warranty management. </div>
+                                </div>
+                            </div>
+                            <div class="list-item">
+                                <div class="marker"></div>
+                                <div class="title-wrap">
+                                    <h5 class="title"> Quality Control System </h5>
+                                    <div class="desc">It's more than a responsibility but a guarantee from us to gain customer trust with highly reliable quality control system. </div>
+                                </div>
+                            </div>
+                            <div class="list-item">
+                                <div class="marker"></div>
+                                <div class="title-wrap">
+                                    <h5 class="title">Highly Professional Staffs </h5>
+                                    <div class="desc">Having obtained the official & formal training in IT technology and technical fields, our staffs know more than what they show. </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="delivering-optimal-wrap">
+                            <div class="list-item">
+                                <div class="marker"></div>
+                                <div class="title-wrap">
+                                    <h5 class="title">Product Engineering & Services </h5>
+                                    <div class="desc">Develop and propose product improvements through periodical and accurate testing, repairing & refining every version. </div>
+                                </div>
+                            </div>
+                            <div class="list-item">
+                                <div class="marker"></div>
+                                <div class="title-wrap">
+                                    <h5 class="title">Infrastructure Integration Technology </h5>
+                                    <div class="desc">At Mitech, we have a holistic and integrated approach towards core modernization to experience technological evolution. </div>
+                                </div>
+                            </div>
+                            <div class="list-item">
+                                <div class="marker"></div>
+                                <div class="title-wrap">
+                                    <h5 class="title">Information Security Management </h5>
+                                    <div class="desc">Information security has been a rising issue lately due to a series of scandals from big companies, rest assured, we're here. </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--=========== fun fact Wrapper Start ==========-->
+        <div class="fun-fact-wrapper bg-theme-default section-space--pb_30 section-space--pt_60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 wow move-up">
+                        <div class="fun-fact--two text-center">
+                            <div class="fun-fact__count counter">120</div>
+                            <h6 class="fun-fact__text">Happy clients</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 wow move-up">
+                        <div class="fun-fact--two text-center">
+                            <div class="fun-fact__count counter">32</div>
+                            <h6 class="fun-fact__text">Finished projects</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 wow move-up">
+                        <div class="fun-fact--two text-center">
+                            <div class="fun-fact__count counter">73</div>
+                            <h6 class="fun-fact__text">Skilled Experts</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 wow move-up">
+                        <div class="fun-fact--two text-center">
+                            <div class="fun-fact__count counter">318</div>
+                            <h6 class="fun-fact__text">Media Posts</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--=========== fun fact Wrapper End ==========-->
+        <!--====================  testimonial section ====================-->
+        <div class="testimonial-slider-area section-space--pt_100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-title-wrap text-center section-space--mb_40">
+                            <h6 class="section-sub-title mb-20">Testimonials</h6>
+                            <h3 class="heading">What do people praise about <span class="text-color-primary"> Mitech?</span></h3>
+                        </div>
+                        <div class="testimonial-slider">
+                            <div class="swiper-container testimonial-slider__container">
+                                <div class="swiper-wrapper testimonial-slider__wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-slider__one wow move-up">
+
+                                            <div class="testimonial-slider--info">
+                                                <div class="testimonial-slider__media">
+                                                    <img src="assets/images/testimonial/mitech-testimonial-avata-02-90x90.webp" class="img-fluid" alt="">
+                                                </div>
+
+                                                <div class="testimonial-slider__author">
+                                                    <div class="testimonial-rating">
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="author-info">
+                                                        <h6 class="name">Abbie Ferguson</h6>
+                                                        <span class="designation">Marketing</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="testimonial-slider__text">I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me.</div>
+
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-slider__one wow move-up">
+
+                                            <div class="testimonial-slider--info">
+                                                <div class="testimonial-slider__media">
+                                                    <img src="assets/images/testimonial/mitech-testimonial-avata-03-90x90.webp" class="img-fluid" alt="">
+                                                </div>
+
+                                                <div class="testimonial-slider__author">
+                                                    <div class="testimonial-rating">
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="author-info">
+                                                        <h6 class="name">Monica Blews</h6>
+                                                        <span class="designation">Web designer</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="testimonial-slider__text">I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me.</div>
+
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-slider__one wow move-up">
+
+                                            <div class="testimonial-slider--info">
+                                                <div class="testimonial-slider__media">
+                                                    <img src="assets/images/testimonial/mitech-testimonial-avata-04-90x90.webp" class="img-fluid" alt="">
+                                                </div>
+
+                                                <div class="testimonial-slider__author">
+                                                    <div class="testimonial-rating">
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="author-info">
+                                                        <h6 class="name">Abbie Ferguson</h6>
+                                                        <span class="designation">WEB DESIGNER</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="testimonial-slider__text">I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me.</div>
+
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testimonial-slider__one wow move-up">
+
+                                            <div class="testimonial-slider--info">
+                                                <div class="testimonial-slider__media">
+                                                    <img src="assets/images/testimonial/mitech-testimonial-avata-01-90x90.webp" class="img-fluid" alt="">
+                                                </div>
+
+                                                <div class="testimonial-slider__author">
+                                                    <div class="testimonial-rating">
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                        <span class="fa fa-star"></span>
+                                                    </div>
+                                                    <div class="author-info">
+                                                        <h6 class="name">Abbie Ferguson</h6>
+                                                        <span class="designation">WEB DESIGNER</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="testimonial-slider__text">I’ve been working with over 35 IT companies on more than 200 projects of our company, but @Mitech is one of the most impressive to me.</div>
+
+                                        </div>
                                     </div>
                                 </div>
+                                <div class="swiper-pagination swiper-pagination-t01 section-space--mt_30"></div>
                             </div>
-                        @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- End Our Team Section -->
+        <!--====================  End of testimonial section  ====================-->
 
-        <!-- Our Vision Section -->
-        <div class="our-vision bg-light mt50">
-            <div class="gr-card-our-vision">
-                <div class="container " >
-                    <div class="row mb50">
-                        <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="card-our-vision text-center">
-                                <div class="block-icon-card text-info"> <i class="fas fa-cloud"></i> 
-                                </div>
-                                <div class="content-card">
-                                    <h4 class="my-3 font-weight-light text-info">Our Mission</h4>
-                                    <p class="text-justify">{{ $about->our_mission }}</p>
-                                </div>
-                            </div>
+        <!--====================  brand logo slider area ====================-->
+        @include('layouts.default.section.client')
+        <!--====================  End of brand logo slider area  ====================-->
+        <!--============ Contact Us Area Start =================-->
+        <div class="contact-us-area infotechno-contact-us-bg section-space--pt_100">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <div class="image">
+                            <img class="img-fluid" src="assets/images/banners/home-cybersecurity-contact-bg-image.webp" alt="">
                         </div>
-                        <div class="col-md-6 col-lg-6  wow fadeInUp" data-wow-delay="0.6s">
-                            <div class="card-our-vision text-center">
-                                <div class="content-card">
-                                    <img src="{{url('/')}}/uploads/images/{{ $about->what_out_value }}" alt="" class="img-fluid" width="100%" height="300px">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-lg-6 mt30 wow fadeInUp" data-wow-delay="0.12s">
-                            <div class="card-our-vision text-center">
-                                <div class="content-card">
-                                    <img src="{{url('/')}}/uploads/images/{{ $about->who_we_are }}" alt="" class="img-fluid" width="100%" height="300px">
-                                </div>
-                            </div>
-                        </div>
+                    </div>
 
-                        <div class="col-md-6 col-lg-6 mt30  wow fadeInUp" data-wow-delay="0.9s">
-                            <div class="card-our-vision text-center">
-                                <div class="block-icon-card text-info"> <i class="fas fa-marker"></i> 
+                    <div class="col-lg-4 ms-auto">
+                        <div class="contact-info style-two text-left">
+
+                            <div class="contact-info-title-wrap text-center">
+                                <h3 class="heading  mb-10">4.9/5.0</h3>
+                                <div class="ht-star-rating lg-style">
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
                                 </div>
-                                <div class="content-card">
-                                    <h4 class="my-3 font-weight-light text-info">Our Vission</h4>
-                                    <p class="text-justify">{{ $about->our_company }}</p>
-                                </div>
+                                <p class="sub-text">by 700+ customers for 3200+ clients</p>
                             </div>
+
+                            <div class="contact-list-item">
+                                <a href="tel:190068668" class="single-contact-list">
+                                    <div class="content-wrap">
+                                        <div class="content">
+                                            <div class="icon">
+                                                <span class="fal fa-phone"></span>
+                                            </div>
+                                            <div class="main-content">
+                                                <h6 class="heading">Call for advice now!</h6>
+                                                <div class="text">1900 68668</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="mailto:hello@mitech.com" class="single-contact-list">
+                                    <div class="content-wrap">
+                                        <div class="content">
+                                            <div class="icon">
+                                                <span class="fal fa-envelope"></span>
+                                            </div>
+                                            <div class="main-content">
+                                                <h6 class="heading">Say hello</h6>
+                                                <div class="text">hello@mitech.com</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
                         </div>
-                        
                     </div>
                 </div>
             </div>
         </div>
+        <!--============ Contact Us Area End =================-->
 
-       
+    </div>
 
-        <!-- End Our Vision Section -->
+    <!--====================  footer area ====================-->
+    <div class="footer-area-wrapper bg-gray">
+        <div class="footer-area section-space--ptb_80">
+            <div class="container">
+                <div class="row footer-widget-wrapper">
+                    <div class="col-lg-4 col-md-6 col-sm-6 footer-widget">
+                        <div class="footer-widget__logo mb-30">
+                            <img src="assets/images/logo/dark-logo-160x48.webp" width="160" height="48" class="img-fluid" alt="">
+                        </div>
+                        <ul class="footer-widget__list">
+                            <li>58 Howard Street #2 San Francisco, CA 941</li>
+                            <li><a href="mailto:contact@aeroland.com" class="hover-style-link">contact@aeroland.com</a></li>
+                            <li><a href="tel:123344556" class="hover-style-link text-black font-weight--bold">(+68)1221 09876</a></li>
+                            <li><a href="https://hasthemes.com/" class="hover-style-link text-color-primary">www.mitech.xperts.com</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 footer-widget">
+                        <h6 class="footer-widget__title mb-20">IT Services</h6>
+                        <ul class="footer-widget__list">
+                            <li><a href="#" class="hover-style-link">Managed IT</a></li>
+                            <li><a href="#" class="hover-style-link">IT Support</a></li>
+                            <li><a href="#" class="hover-style-link">IT Consultancy</a></li>
+                            <li><a href="#" class="hover-style-link">Cloud Computing</a></li>
+                            <li><a href="#" class="hover-style-link">Cyber Security</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 footer-widget">
+                        <h6 class="footer-widget__title mb-20">Quick links</h6>
+                        <ul class="footer-widget__list">
+                            <li><a href="#" class="hover-style-link">Pick up locations</a></li>
+                            <li><a href="#" class="hover-style-link">Terms of Payment</a></li>
+                            <li><a href="#" class="hover-style-link">Privacy Policy</a></li>
+                            <li><a href="#" class="hover-style-link">Where to Find Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 footer-widget">
+                        <h6 class="footer-widget__title mb-20">Support</h6>
+                        <ul class="footer-widget__list">
+                            <li><a href="#" class="hover-style-link">Forum Support</a></li>
+                            <li><a href="#" class="hover-style-link">Help & FAQ</a></li>
+                            <li><a href="#" class="hover-style-link">Contact Us</a></li>
+                            <li><a href="#" class="hover-style-link">Pricing and plans</a></li>
+                            <li><a href="#" class="hover-style-link">Cookies Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-6 footer-widget">
+                        <div class="footer-widget__title section-space--mb_50"></div>
+                        <ul class="footer-widget__list">
+                            <li><a href="#" class="image_btn"><img class="img-fluid" src="assets/images/icons/aeroland-button-google-play.webp" alt=""></a></li>
+                            <li><a href="#" class="image_btn"><img class="img-fluid" src="assets/images/icons/aeroland-button-app-store.webp" alt=""></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright-area section-space--pb_30">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <span class="copyright-text">&copy; 2021 Mitech. <a href="https://hasthemes.com/">All Rights Reserved.</a></span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <ul class="list ht-social-networks solid-rounded-icon">
 
-@include('layouts.default.coll-us')
+                            <li class="item">
+                                <a href="https://twitter.com/" target="_blank" aria-label="Twitter" class="social-link hint--bounce hint--top hint--primary">
+                                    <i class="fab fa-twitter link-icon"></i>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="social-link hint--bounce hint--top hint--primary">
+                                    <i class="fab fa-facebook-f link-icon"></i>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="https://instagram.com/" target="_blank" aria-label="Instagram" class="social-link hint--bounce hint--top hint--primary">
+                                    <i class="fab fa-instagram link-icon"></i>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="https://linkedin.com/" target="_blank" aria-label="Linkedin" class="social-link hint--bounce hint--top hint--primary">
+                                    <i class="fab fa-linkedin link-icon"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====================  End of footer area  ====================-->
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!-- Start Toolbar -->
+<div class="demo-option-container">
+    <!-- Start Toolbar -->
+    <div class="aeroland__toolbar">
+        <div class="inner">
+            <a class="quick-option hint--bounce hint--left hint--black primary-color-hover-important" href="#" aria-label="Quick Options">
+                <i class="fal fa-project-diagram"></i>
+            </a>
+            <a class="hint--bounce hint--left hint--black primary-color-hover-important" target="_blank" href="https://hasthemes.com/contact-us/" aria-label="Support Center">
+                <i class="fal fa-life-ring"></i>
+            </a>
+            <a class="hint--bounce hint--left hint--black primary-color-hover-important" target="_blank" href="https://1.envato.market/c/417168/275988/4415?subId1=hastheme&amp;subId2=mitech-preview&amp;subId3=https%3A%2F%2Fthemeforest.net%2Fcart%2Fconfigure_before_adding%2F24906742%3Flicense%3Dregular%26size%3Dsource&amp;u=https%3A%2F%2Fthemeforest.net%2Fcart%2Fconfigure_before_adding%2F24906742%3Flicense%3Dregular%26size%3Dsource" aria-label="Purchase Mitech">
+                <i class="fal fa-shopping-cart"></i>
+            </a>
+        </div>
+    </div>
+    <!-- End Toolbar -->
+    <!-- Start Quick Link -->
+    <div class="demo-option-wrapper">
+        <div class="demo-panel-header">
+            <div class="title">
+                <h6 class="heading mt-30">IT Solutions Mitech - Technology, IT Solutions & Services Html5 Template</h6>
+            </div>
+
+            <div class="panel-btn mt-20">
+                <a class="ht-btn ht-btn-md" href="https://1.envato.market/c/417168/275988/4415?subId1=hastheme&amp;subId2=mitech-preview&amp;subId3=https%3A%2F%2Fthemeforest.net%2Fcart%2Fconfigure_before_adding%2F24906742%3Flicense%3Dregular%26size%3Dsource&amp;u=https%3A%2F%2Fthemeforest.net%2Fcart%2Fconfigure_before_adding%2F24906742%3Flicense%3Dregular%26size%3Dsource"><i class="far fa-shopping-cart me-2"></i> Buy Now </a>
+            </div>
+        </div>
+        <div class="demo-quick-option-list">
+            <a class="link hint--bounce hint--black hint--top hint--dark" href="index-appointment.html" aria-label="Appointment">
+                <img class="img-fluid" src="assets/images/demo-images/home-01.webp" alt="Images">
+            </a>
+            <a class="link hint--bounce hint--black hint--top hint--dark" href="index-infotechno.html" aria-label="Infotechno">
+                <img class="img-fluid" src="assets/images/demo-images/home-02.webp" alt="Images">
+            </a>
+            <a class="link hint--bounce hint--black hint--top hint--dark" href="index-processing.html" aria-label="Processing">
+                <img class="img-fluid" src="assets/images/demo-images/home-03.webp" alt="Images">
+            </a>
+            <a class="link hint--bounce hint--black hint--top hint--dark" href="index-services.html" aria-label="Services">
+                <img class="img-fluid" src="assets/images/demo-images/home-04.webp" alt="Images">
+            </a>
+            <a class="link hint--bounce hint--black hint--top hint--dark" href="index-resolutions.html" aria-label="Resolutions">
+                <img class="img-fluid" src="assets/images/demo-images/home-05.webp" alt="Images">
+            </a>
+            <a class="link hint--bounce hint--black hint--top hint--dark" href="index-cybersecurity.html" aria-label="Cybersecurity">
+                <img class="img-fluid" src="assets/images/demo-images/home-06.webp" alt="Images">
+            </a>
+            <a class="link hint--bounce hint--black hint--top hint--dark" href="index-modern-it-company.html" aria-label="Modern IT Company">
+                <img class="img-fluid" src="assets/images/demo-images/modern-it-company.webp" alt="Images">
+            </a>
+            <a class="link hint--bounce hint--black hint--top hint--dark" href="index-machine-learning.html" aria-label="Machine Learning">
+                <img class="img-fluid" src="assets/images/demo-images/machine-learning.webp" alt="Images">
+            </a>
+            <a class="link hint--bounce hint--black hint--top hint--dark" href="index-software-innovation.html" aria-label="Software Innovation">
+                <img class="img-fluid" src="assets/images/demo-images/software-innovation.webp" alt="Images">
+            </a>
+        </div>
+    </div>
+    <!-- End Quick Link -->
+</div>
+<!-- End Toolbar -->
+<!--====================  scroll top ====================-->
+<a href="#" class="scroll-top" id="scroll-top">
+    <i class="arrow-top fal fa-long-arrow-up"></i>
+    <i class="arrow-bottom fal fa-long-arrow-up"></i>
+</a>
+<!--====================  End of scroll top  ====================-->
+
+<!--====================  mobile menu overlay ====================-->
+<div class="mobile-menu-overlay" id="mobile-menu-overlay">
+    <div class="mobile-menu-overlay__inner">
+        <div class="mobile-menu-overlay__header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-md-6 col-8">
+                        <!-- logo -->
+                        <div class="logo">
+                            <a href="index.html">
+                                <img src="assets/images/logo/logo-dark.webp" class="img-fluid" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-4">
+                        <!-- mobile menu content -->
+                        <div class="mobile-menu-content text-end">
+                            <span class="mobile-navigation-close-icon" id="mobile-menu-close-trigger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu-overlay__body">
+            <nav class="offcanvas-navigation">
+                <ul>
+                    <li class="has-children">
+                        <a href="index.html">Home</a>
+                        <ul class="sub-menu">
+                            <li><a href="index-infotechno.html"><span>Infotechno</span></a></li>
+                            <li><a href="index-processing.html"><span>Processing</span></a></li>
+                            <li><a href="index-appointment.html"><span>Appointment</span></a></li>
+                            <li><a href="index-services.html"><span>Services</span></a></li>
+                            <li><a href="index-resolutions.html"><span>Resolutions</span></a></li>
+                            <li><a href="index-cybersecurity.html"><span>cybersecurity</span></a></li>
+                            <li><a href="index-modern-it-company.html"><span>Modern IT Company</span></a></li>
+                            <li><a href="index-machine-learning.html"><span>Machine Learning</span></a></li>
+                            <li><a href="index-software-innovation.html"><span>Software Innovation</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="has-children">
+                        <a href="#">Company</a>
+                        <ul class="sub-menu">
+                            <li class="has-children">
+                                <a href="about-us-01.html"><span>About us</span></a>
+                                <ul class="sub-menu">
+                                    <li><a href="about-us-01.html"><span>About us 01</span></a></li>
+                                    <li><a href="about-us-02.html"><span>About us 02</span></a></li>
+                                    <li class="has-children">
+                                        <a href="#"><span>Submenu Level Two</span></a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#"><span>Submenu Level Three</span></a></li>
+                                            <li><a href="#"><span>Submenu Level Three</span></a></li>
+                                            <li><a href="#"><span>Submenu Level Three</span></a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="contact-us.html"><span>Contact us</span></a></li>
+                            <li><a href="leadership.html"><span>Leadership</span></a></li>
+                            <li><a href="why-choose-us.html"><span>Why choose us</span></a></li>
+                            <li><a href="our-history.html"><span>Our history</span></a></li>
+                            <li><a href="faqs.html"><span>FAQs</span></a></li>
+                            <li><a href="careers.html"><span>Careers</span></a></li>
+                            <li><a href="pricing-plans.html"><span>Pricing plans</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="has-children">
+                        <a href="#">IT solutions</a>
+                        <ul class="sub-menu">
+                            <li><a href="it-services.html"><span>IT Services</span></a></li>
+                            <li><a href="managed-it-service.html"><span>Managed IT Services</span></a></li>
+                            <li><a href="industries.html"><span>Industries</span></a></li>
+                            <li><a href="business-solution.html"><span>Business solution</span></a></li>
+                            <li><a href="it-services-details.html"><span>IT Services Details</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="has-children">
+                        <a href="#">Elements</a>
+                        <ul class="sub-menu">
+                            <li class="has-children">
+                                <a href="#">Element Group 01</a>
+                                <ul class="sub-menu">
+                                    <li><a href="element-accordion.html"><span>Accordions & Toggles</span></a></li>
+                                    <li><a href="element-box-icon.html"><span>Box Icon</span></a></li>
+                                    <li><a href="element-box-image.html"><span>Box Image</span></a></li>
+                                    <li><a href="element-box-large-image.html"><span>Box Large Image</span></a></li>
+                                    <li><a href="element-buttons.html"><span>Buttons</span></a></li>
+                                    <li><a href="element-cta.html"><span>Call to action</span></a></li>
+                                    <li><a href="element-client-logo.html"><span>Client Logo</span></a></li>
+                                    <li><a href="element-countdown.html"><span>Countdown</span></a></li>
+                                </ul>
+                            </li>
+                            <li class="has-children">
+                                <a href="#">Element Group 02</a>
+                                <ul class="sub-menu">
+                                    <li><a href="element-counters.html"><span>Counters</span></a></li>
+                                    <li><a href="element-dividers.html"><span>Dividers</span></a></li>
+                                    <li><a href="element-flexible-image-slider.html"><span>Flexible image slider</span></a></li>
+                                    <li><a href="element-google-map.html"><span>Google Map</span></a></li>
+                                    <li><a href="element-gradation.html"><span>Gradation</span></a></li>
+                                    <li><a href="element-instagram.html"><span>Instagram</span></a></li>
+                                    <li><a href="element-lists.html"><span>Lists</span></a></li>
+                                    <li><a href="element-message-box.html"><span>Message box</span></a></li>
+                                </ul>
+                            </li>
+                            <li class="has-children">
+                                <a href="#">Element Group 03</a>
+                                <ul class="sub-menu">
+                                    <li><a href="element-popup-video.html"><span>Popup Video</span></a></li>
+                                    <li><a href="element-pricing-box.html"><span>Pricing Box</span></a></li>
+                                    <li><a href="element-progress-bar.html"><span>Progress Bar</span></a></li>
+                                    <li><a href="element-progress-circle.html"><span>Progress Circle</span></a></li>
+                                    <li><a href="element-rows-columns.html"><span>Rows & Columns</span></a></li>
+                                    <li><a href="element-social-networks.html"><span>Social Networks</span></a></li>
+                                    <li><a href="element-tabs.html"><span>Tabs</span></a></li>
+                                    <li><a href="element-team-member.html"><span>Team member</span></a></li>
+                                </ul>
+                            </li>
+                            <li class="has-children">
+                                <a href="#">Element Group 04</a>
+                                <ul class="sub-menu">
+                                    <li><a href="element-testimonials.html"><span>Testimonials</span></a></li>
+                                    <li><a href="element-timeline.html"><span>Timeline</span></a></li>
+                                    <li><a href="element-carousel-sliders.html"><span>Carousel Sliders</span></a></li>
+                                    <li><a href="element-typed-text.html"><span>Typed Text</span></a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="has-children">
+                        <a href="javascript:void(0)">Case Studies</a>
+                        <ul class="sub-menu">
+                            <li><a href="case-studies.html"><span>Case Studies 01</span></a></li>
+                            <li><a href="case-studies-02.html"><span>Case Studies 02</span></a></li>
+                            <li><a href="single-smart-vision.html"><span>Single Layout</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="has-children">
+                        <a href="javascript:void(0)">Blogs</a>
+                        <ul class="sub-menu">
+                            <li><a href="blog-list-large-image.html"><span>List Large Image</span></a></li>
+                            <li><a href="blog-list-left-large-image.html"><span>Left Large Image</span></a></li>
+                            <li><a href="blog-grid-classic.html"><span>Grid Classic</span></a></li>
+                            <li><a href="blog-grid-masonry.html"><span>Grid Masonry</span></a></li>
+                            <li class="has-children">
+                                <a href="blog-post-layout-one.html"><span>Single Layouts</span></a>
+                                <ul class="sub-menu">
+                                    <li><a href="blog-post-layout-one.html"><span>Left Sidebar</span></a></li>
+                                    <li><a href="blog-post-right-sidebar.html"><span>Right Sidebar</span></a></li>
+                                    <li><a href="blog-post-no-sidebar.html"><span>No Sidebar</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+<!--====================  End of mobile menu overlay  ====================-->
+
+
+
+
+
+
+
+<!--====================  search overlay ====================-->
+<div class="search-overlay" id="search-overlay">
+
+    <div class="search-overlay__header">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-md-6 ms-auto col-4">
+                    <!-- search content -->
+                    <div class="search-content text-end">
+                        <span class="mobile-navigation-close-icon" id="search-close-trigger"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="search-overlay__inner">
+        <div class="search-overlay__body">
+            <div class="search-overlay__form">
+                <form action="#">
+                    <input type="text" placeholder="Search">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--====================  End of search overlay  ====================-->
+
+
+
 
 @include('layouts.default.footer')
