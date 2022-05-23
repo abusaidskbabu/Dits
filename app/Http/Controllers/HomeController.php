@@ -36,6 +36,9 @@ class HomeController extends Controller {
 	 * @return Response
 	 */
 	public function index( Request $request,  $category = ''){
+
+
+		
         \App::setLocale(\Session::get('lang'));
 		if(config('sximo.cnf_front') =='false' && $request->segment(1) =='' ) :
 			return redirect('dashboard');
@@ -352,7 +355,7 @@ class HomeController extends Controller {
 		}
 	}
 
-	public function set_theme( $id ){
+	public function set_theme($id){
 		session(['set_theme'=> $id ]);
 		return response()->json(['status'=>'success']);
 	}	

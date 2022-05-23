@@ -23,7 +23,6 @@ use Helper;
 use Carbon;
 
 
-
 use Illuminate\Support\Str;
 class VmslController extends Controller{
 	

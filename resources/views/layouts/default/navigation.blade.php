@@ -58,13 +58,13 @@
                                       <li class="has-children has-children--multilevel-submenu">
                                         <a href="#"><span>About</span></a>
                                         <ul class="submenu">
-                                            <li><a href="{{ route('about') }}"><span>About Us</span></a></li>
-                                            <li><a href="{{ route('team') }}"><span>Our Team</span></a></li>
+                                            {{-- <li><a href="{{ route('about') }}"><span>About Us</span></a></li>
+                                            <li><a href="{{ route('team') }}"><span>Our Team</span></a></li> --}}
                                         </ul>
                                     </li>
 
                                       <li class="has-children--multilevel-submenu">
-                                          <a href="{{ route('services') }}"><span>Services</span></a>
+                                          {{-- <a href="{{ route('services') }}"><span>Services</span></a> --}}
                                       </li>
                                       <li class="has-children--multilevel-submenu">
                                           <a href="/"><span>Portfolio</span></a>

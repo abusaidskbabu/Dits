@@ -18,9 +18,8 @@ class DashboardController extends Controller {
         );			
 	}
 
-	public function index( Request $request )
-	{
-		return view('dashboard.index',$this->data);
+	public function index(Request $request ){
+		return view('dashboard.index', $this->data);
 	}	
 
 

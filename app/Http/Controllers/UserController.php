@@ -593,7 +593,9 @@ class UserController extends Controller {
 	public function getLogout() {
 		\Auth::logout();
 		\Session::flush();
-		return redirect('')->with(['message'=>'Your are now logged out!','status'=>'success']);
+		// return redirect('')->with(['message'=>'Your are now logged out !','status'=>'success']);
+		return redirect('user/login')->with(['message'=>'Your are now logged out !','status'=>'success']);
+
 	}
 
 	function socialize( $social )

@@ -5,8 +5,6 @@
 <div class="toolbar-nav">
   <a href="javascript:;" class="btn "> Welcome to Your application </a>
 </div>
-<div class="table-container">
-
-  </div>
+<div class="table-container"></div>
 
 @stop

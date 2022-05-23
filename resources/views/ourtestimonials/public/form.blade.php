@@ -47,7 +47,7 @@
 						    <input type="file" name="image" class="upload"   accept="image/x-png,image/gif,image/jpeg"     />
 						</div>
 						<div class="image-preview preview-upload">
-							{!! SiteHelpers::showUploadedFile( $row["image"],"uploads/images/testimonial") !!}
+							{!! SiteHelpers::showUploadedFile( $row["image"],"/uploads/images/testimonial") !!}
 						</div>
 					 
 										 </div> 

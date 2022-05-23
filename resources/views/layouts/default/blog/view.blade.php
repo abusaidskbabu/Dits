@@ -163,12 +163,5 @@
                 </div>
             </div>
             <!--========== Call to Action Area End ============-->
-
-
-
-
-
-
-
-
         </div>
+    </div>

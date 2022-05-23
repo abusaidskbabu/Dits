@@ -125,11 +125,6 @@ Route::resource('services/respectforhonesty','Services\RespectforhonestyControll
 // End Routes for respectforhonesty 
 
                     
-// Start Routes for happyclients 
-Route::resource('services/happyclients','Services\HappyclientsController');
-// End Routes for happyclients 
-
-                    
 // Start Routes for ourletestnews 
 Route::resource('services/ourletestnews','Services\OurletestnewsController');
 // End Routes for ourletestnews 
@@ -238,5 +233,30 @@ Route::resource('services/contactrequest','Services\ContactrequestController');
 // Start Routes for ourtestimonials 
 Route::resource('services/ourtestimonials','Services\OurtestimonialsController');
 // End Routes for ourtestimonials 
+
+                    
+// Start Routes for ourplans 
+Route::resource('services/ourplans','Services\OurplansController');
+// End Routes for ourplans 
+
+                    
+// Start Routes for ourcompany 
+Route::resource('services/ourcompany','Services\OurcompanyController');
+// End Routes for ourcompany 
+
+                    
+// Start Routes for howworkdits 
+Route::resource('services/howworkdits','Services\HowworkditsController');
+// End Routes for howworkdits 
+
+                    
+// Start Routes for discover 
+Route::resource('services/discover','Services\DiscoverController');
+// End Routes for discover 
+
+                    
+// Start Routes for optimalsolutions 
+Route::resource('services/optimalsolutions','Services\OptimalsolutionsController');
+// End Routes for optimalsolutions 
 
                     ?>
