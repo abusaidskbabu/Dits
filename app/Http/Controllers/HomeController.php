@@ -36,7 +36,7 @@ class HomeController extends Controller {
 	 * @return Response
 	 */
 	public function index( Request $request,  $category = ''){
-
+		return view('user/login');
 
 		
         \App::setLocale(\Session::get('lang'));
