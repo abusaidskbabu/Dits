@@ -29,16 +29,7 @@
 		<div class="row">
 	<div class="col-md-12">
 						<fieldset><legend> Our Services</legend>
-				{!! Form::hidden('id', $row['id']) !!}					
-									  <div class="form-group row  " >
-										<label for="Parrent Id" class=" control-label col-md-4 text-left"> Parrent Id </label>
-										<div class="col-md-6">
-										  <select name='parrent_id' rows='5' id='parrent_id' class='select2 '   ></select> 
-										 </div> 
-										 <div class="col-md-2">
-										 	
-										 </div>
-									  </div> 					
+				{!! Form::hidden('id', $row['id']) !!}{!! Form::hidden('parrent_id', $row['parrent_id']) !!}					
 									  <div class="form-group row  " >
 										<label for="Service Name" class=" control-label col-md-4 text-left"> Service Name </label>
 										<div class="col-md-6">
@@ -50,10 +41,18 @@
 										 </div>
 									  </div> 					
 									  <div class="form-group row  " >
-										<label for="Service Icone" class=" control-label col-md-4 text-left"> Service Icone </label>
+										<label for="Image" class=" control-label col-md-4 text-left"> Image </label>
 										<div class="col-md-6">
-										  <input  type='text' name='service_icone' id='service_icone' value='{{ $row['service_icone'] }}' 
-						     class='form-control form-control-sm ' /> 
+										  
+						<div class="fileUpload btn " > 
+						    <span>  <i class="fa fa-camera"></i>  </span>
+						    <div class="title"> Browse File </div>
+						    <input type="file" name="service_icone" class="upload"   accept="image/x-png,image/gif,image/jpeg"     />
+						</div>
+						<div class="service_icone-preview preview-upload">
+							{!! SiteHelpers::showUploadedFile( $row["service_icone"],"/uploads/images/services") !!}
+						</div>
+					 
 										 </div> 
 										 <div class="col-md-2">
 										 	
@@ -96,20 +95,7 @@
 										 <div class="col-md-2">
 										 	
 										 </div>
-									  </div> 					
-									  <div class="form-group row  " >
-										<label for="Parrent" class=" control-label col-md-4 text-left"> Parrent </label>
-										<div class="col-md-6">
-										  <?php $parrent = explode(",",$row['parrent']); ?>
-					  
-					<input type='checkbox' name='parrent[]' value ='Yes'   class=' minimal-green' 
-					@if(in_array('Yes',$parrent))checked @endif 
-					 /> Yes  
-										 </div> 
-										 <div class="col-md-2">
-										 	
-										 </div>
-									  </div> 					
+									  </div> {!! Form::hidden('parrent', $row['parrent']) !!}					
 									  <div class="form-group row  " >
 										<label for="Status" class=" control-label col-md-4 text-left"> Status </label>
 										<div class="col-md-6">
@@ -118,20 +104,7 @@
 										 <div class="col-md-2">
 										 	
 										 </div>
-									  </div> 					
-									  <div class="form-group row  " >
-										<label for="Child" class=" control-label col-md-4 text-left"> Child </label>
-										<div class="col-md-6">
-										  <?php $created_at = explode(",",$row['created_at']); ?>
-					  
-					<input type='checkbox' name='created_at[]' value ='1'   class=' minimal-green' 
-					@if(in_array('1',$created_at))checked @endif 
-					 /> Yes  
-										 </div> 
-										 <div class="col-md-2">
-										 	
-										 </div>
-									  </div> </fieldset></div>
+									  </div> {!! Form::hidden('created_at', $row['created_at']) !!}</fieldset></div>
 	
 		</div>
 
@@ -145,9 +118,6 @@
 	$(document).ready(function() { 
 		
 		
-		
-		$("#parrent_id").jCombo("{!! url('ourservices/comboselect?filter=dit_services:id:service_name') !!}",
-		{  selected_value : '{{ $row["parrent_id"] }}' });
 		
 		$("#status").jCombo("{!! url('ourservices/comboselect?filter=status:id:title') !!}",
 		{  selected_value : '{{ $row["status"] }}' });
