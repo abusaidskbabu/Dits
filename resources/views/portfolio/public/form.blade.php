@@ -1,6 +1,6 @@
 
 
-		 {!! Form::open(array('url'=>'ourportfolio', 'class'=>'form-horizontal','files' => true , 'parsley-validate'=>'','novalidate'=>' ')) !!}
+		 {!! Form::open(array('url'=>'portfolio', 'class'=>'form-horizontal','files' => true , 'parsley-validate'=>'','novalidate'=>' ')) !!}
 
 	@if(Session::has('messagetext'))
 	  
@@ -15,13 +15,13 @@
 
 
 <div class="col-md-12">
-						<fieldset><legend> Our Portfolio</legend>
+						<fieldset><legend> Portfolio</legend>
 				{!! Form::hidden('id', $row['id']) !!}					
 									  <div class="form-group row  " >
-										<label for="Title" class=" control-label col-md-4 text-left"> Title </label>
+										<label for="Title" class=" control-label col-md-4 text-left"> Title <span class="asterix"> * </span></label>
 										<div class="col-md-6">
 										  <input  type='text' name='title' id='title' value='{{ $row['title'] }}' 
-						     class='form-control form-control-sm ' /> 
+						required     class='form-control form-control-sm ' /> 
 										 </div> 
 										 <div class="col-md-2">
 										 	
@@ -46,6 +46,36 @@
 										 </div>
 									  </div> 					
 									  <div class="form-group row  " >
+										<label for="Video Link" class=" control-label col-md-4 text-left"> Video Link </label>
+										<div class="col-md-6">
+										  <input  type='text' name='video_link' id='video_link' value='{{ $row['video_link'] }}' 
+						     class='form-control form-control-sm ' /> 
+										 </div> 
+										 <div class="col-md-2">
+										 	
+										 </div>
+									  </div> 					
+									  <div class="form-group row  " >
+										<label for="Button Text" class=" control-label col-md-4 text-left"> Button Text </label>
+										<div class="col-md-6">
+										  <input  type='text' name='button_text' id='button_text' value='{{ $row['button_text'] }}' 
+						     class='form-control form-control-sm ' /> 
+										 </div> 
+										 <div class="col-md-2">
+										 	
+										 </div>
+									  </div> 					
+									  <div class="form-group row  " >
+										<label for="Button Link" class=" control-label col-md-4 text-left"> Button Link </label>
+										<div class="col-md-6">
+										  <input  type='text' name='button_link' id='button_link' value='{{ $row['button_link'] }}' 
+						     class='form-control form-control-sm ' /> 
+										 </div> 
+										 <div class="col-md-2">
+										 	
+										 </div>
+									  </div> 					
+									  <div class="form-group row  " >
 										<label for="Descriptions" class=" control-label col-md-4 text-left"> Descriptions </label>
 										<div class="col-md-6">
 										  <textarea name='descriptions' rows='5' id='editor' class='form-control form-control-sm editor '  
@@ -56,7 +86,7 @@
 										 </div>
 									  </div> 					
 									  <div class="form-group row  " >
-										<label for="Category Id" class=" control-label col-md-4 text-left"> Category Id </label>
+										<label for="Category" class=" control-label col-md-4 text-left"> Category </label>
 										<div class="col-md-6">
 										  <select name='category_id' rows='5' id='category_id' class='select2 '   ></select> 
 										 </div> 
@@ -65,14 +95,23 @@
 										 </div>
 									  </div> 					
 									  <div class="form-group row  " >
-										<label for="Status" class=" control-label col-md-4 text-left"> Status </label>
+										<label for="Status" class=" control-label col-md-4 text-left"> Status <span class="asterix"> * </span></label>
 										<div class="col-md-6">
-										  <select name='status' rows='5' id='status' class='select2 '   ></select> 
+										  
+					<?php $status = explode(',',$row['status']);
+					$status_opt = array( '1' => 'Active' ,  '2' => 'Inactive' , ); ?>
+					<select name='status' rows='5' required  class='select2 '  > 
+						<?php 
+						foreach($status_opt as $key=>$val)
+						{
+							echo "<option  value ='$key' ".($row['status'] == $key ? " selected='selected' " : '' ).">$val</option>"; 						
+						}						
+						?></select> 
 										 </div> 
 										 <div class="col-md-2">
 										 	
 										 </div>
-									  </div> </fieldset></div>
+									  </div> {!! Form::hidden('add_info1', $row['add_info1']) !!}{!! Form::hidden('add_info2', $row['add_info2']) !!}{!! Form::hidden('updated_at', $row['updated_at']) !!}{!! Form::hidden('created_at', $row['created_at']) !!}</fieldset></div>
 
 			<div style="clear:both"></div>	
 				
@@ -92,11 +131,8 @@
 	$(document).ready(function() { 
 		
 		
-		$("#category_id").jCombo("{!! url('ourportfolio/comboselect?filter=portfolio_category:id:title') !!}",
+		$("#category_id").jCombo("{!! url('portfolio/comboselect?filter=portfolio_category:id:title') !!}",
 		{  selected_value : '{{ $row["category_id"] }}' });
-		
-		$("#status").jCombo("{!! url('ourportfolio/comboselect?filter=status:id:title') !!}",
-		{  selected_value : '{{ $row["status"] }}' });
 		 
 
 		$('.removeCurrentFiles').on('click',function(){

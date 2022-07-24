@@ -1,29 +1,29 @@
 <?php namespace App\Http\Controllers\Services;
 
 use App\Http\Controllers\Controller;
-use App\Models\Ourportfolio;
+use App\Models\Portfolio;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator as Paginator;
 use Validator, Input, Redirect ; 
 
 
-class OurportfolioController extends Controller {
+class PortfolioController extends Controller {
 
 	protected $layout = "layouts.main";
 	protected $data = array();	
-	public $module = 'ourportfolio';
+	public $module = 'portfolio';
 	static $per_page	= '50';
 
 	public function __construct()
 	{		
 		parent::__construct();
-		$this->model = new Ourportfolio();	
+		$this->model = new Portfolio();	
 		
 		$this->info = $this->model->makeInfo( $this->module);	
 		$this->data = array(
 			'pageTitle'	=> 	$this->info['title'],
 			'pageNote'	=>  $this->info['note'],
-			'pageModule'=> 'ourportfolio',
+			'pageModule'=> 'portfolio',
 			'return'	=> self::returnUrl()
 			
 		);

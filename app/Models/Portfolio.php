@@ -3,7 +3,7 @@
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 
-class ourportfolio extends Sximo  {
+class portfolio extends Sximo  {
 	
 	protected $table = 'our_protfolios';
 	protected $primaryKey = 'id';

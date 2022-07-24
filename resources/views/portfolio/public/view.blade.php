@@ -30,13 +30,31 @@
 					</tr>
 				
 					<tr>
+						<td width='30%' class='label-view text-right'>{{ SiteHelpers::activeLang('Video Link', (isset($fields['video_link']['language'])? $fields['video_link']['language'] : array())) }}</td>
+						<td>{{ $row->video_link}} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>{{ SiteHelpers::activeLang('Button Text', (isset($fields['button_text']['language'])? $fields['button_text']['language'] : array())) }}</td>
+						<td>{{ $row->button_text}} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>{{ SiteHelpers::activeLang('Button Link', (isset($fields['button_link']['language'])? $fields['button_link']['language'] : array())) }}</td>
+						<td>{{ $row->button_link}} </td>
+						
+					</tr>
+				
+					<tr>
 						<td width='30%' class='label-view text-right'>{{ SiteHelpers::activeLang('Descriptions', (isset($fields['descriptions']['language'])? $fields['descriptions']['language'] : array())) }}</td>
 						<td>{{ $row->descriptions}} </td>
 						
 					</tr>
 				
 					<tr>
-						<td width='30%' class='label-view text-right'>{{ SiteHelpers::activeLang('Category Id', (isset($fields['category_id']['language'])? $fields['category_id']['language'] : array())) }}</td>
+						<td width='30%' class='label-view text-right'>{{ SiteHelpers::activeLang('Category', (isset($fields['category_id']['language'])? $fields['category_id']['language'] : array())) }}</td>
 						<td>{{ SiteHelpers::formatLookUp($row->category_id,'category_id','1:portfolio_category:id:title') }} </td>
 						
 					</tr>
@@ -44,6 +62,24 @@
 					<tr>
 						<td width='30%' class='label-view text-right'>{{ SiteHelpers::activeLang('Status', (isset($fields['status']['language'])? $fields['status']['language'] : array())) }}</td>
 						<td>{{ SiteHelpers::formatLookUp($row->status,'status','1:status:id:title') }} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>{{ SiteHelpers::activeLang('Add Info1', (isset($fields['add_info1']['language'])? $fields['add_info1']['language'] : array())) }}</td>
+						<td>{{ $row->add_info1}} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>{{ SiteHelpers::activeLang('Add Info2', (isset($fields['add_info2']['language'])? $fields['add_info2']['language'] : array())) }}</td>
+						<td>{{ $row->add_info2}} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>{{ SiteHelpers::activeLang('Updated At', (isset($fields['updated_at']['language'])? $fields['updated_at']['language'] : array())) }}</td>
+						<td>{{ $row->updated_at}} </td>
 						
 					</tr>
 				

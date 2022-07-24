@@ -59,7 +59,7 @@
 										 </div>
 									  </div> 					
 									  <div class="form-group row  " >
-										<label for="Our Company" class=" control-label col-md-4 text-left"> Our Company </label>
+										<label for="Our Vission" class=" control-label col-md-4 text-left"> Our Vission </label>
 										<div class="col-md-6">
 										  <textarea name='our_company' rows='5' id='our_company' class='form-control form-control-sm '  
 				           >{{ $row['our_company'] }}</textarea> 

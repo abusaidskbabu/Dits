@@ -195,11 +195,6 @@ Route::resource('services/progressbar','Services\ProgressbarController');
 // End Routes for progressbar 
 
                     
-// Start Routes for ourportfolio 
-Route::resource('services/ourportfolio','Services\OurportfolioController');
-// End Routes for ourportfolio 
-
-                    
 // Start Routes for portfoliocategory 
 Route::resource('services/portfoliocategory','Services\PortfoliocategoryController');
 // End Routes for portfoliocategory 
@@ -258,5 +253,10 @@ Route::resource('services/discover','Services\DiscoverController');
 // Start Routes for optimalsolutions 
 Route::resource('services/optimalsolutions','Services\OptimalsolutionsController');
 // End Routes for optimalsolutions 
+
+                    
+// Start Routes for portfolio 
+Route::resource('services/portfolio','Services\PortfolioController');
+// End Routes for portfolio 
 
                     ?>
