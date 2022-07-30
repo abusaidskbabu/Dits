@@ -25,11 +25,6 @@ Route::resource('services/upcoming','Services\UpcomingController');
 // End Routes for upcoming 
 
                     
-// Start Routes for ourclients 
-Route::resource('services/ourclients','Services\OurclientsController');
-// End Routes for ourclients 
-
-                    
 // Start Routes for ourmission 
 Route::resource('services/ourmission','Services\OurmissionController');
 // End Routes for ourmission 
@@ -165,11 +160,6 @@ Route::resource('services/bannercategory','Services\BannercategoryController');
 // End Routes for bannercategory 
 
                     
-// Start Routes for ourservices 
-Route::resource('services/ourservices','Services\OurservicesController');
-// End Routes for ourservices 
-
-                    
 // Start Routes for websitesectionfour 
 Route::resource('services/websitesectionfour','Services\WebsitesectionfourController');
 // End Routes for websitesectionfour 
@@ -255,8 +245,23 @@ Route::resource('services/optimalsolutions','Services\OptimalsolutionsController
 // End Routes for optimalsolutions 
 
                     
-// Start Routes for portfolio 
-Route::resource('services/portfolio','Services\PortfolioController');
-// End Routes for portfolio 
+// Start Routes for allservices 
+Route::resource('services/allservices','Services\AllservicesController');
+// End Routes for allservices 
+
+                    
+// Start Routes for childservice 
+Route::resource('services/childservice','Services\ChildserviceController');
+// End Routes for childservice 
+
+                    
+// Start Routes for ditsportfolios 
+Route::resource('services/ditsportfolios','Services\DitsportfoliosController');
+// End Routes for ditsportfolios 
+
+                    
+// Start Routes for ditsclients 
+Route::resource('services/ditsclients','Services\DitsclientsController');
+// End Routes for ditsclients 
 
                     ?>

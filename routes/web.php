@@ -87,3 +87,4 @@ Route::group(['namespace' => 'Core','middleware' => 'auth'], function () {
 Route::get('getmedicine/{id}','CitController@getMedicineById');
 Route::post('sendmail','VmslController@contact_email')->name('contact.email');
 
+
