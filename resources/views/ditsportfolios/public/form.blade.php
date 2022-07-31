@@ -151,9 +151,18 @@
 										 </div>
 									  </div> 					
 									  <div class="form-group row  " >
-										<label for="Service" class=" control-label col-md-4 text-left"> Service </label>
+										<label for="Category" class=" control-label col-md-4 text-left"> Category <span class="asterix"> * </span></label>
 										<div class="col-md-6">
-										  <select name='category_id' rows='5' id='category_id' class='select2 '   ></select> 
+										  <select name='category_id' rows='5' id='category_id' class='select2 ' required  ></select> 
+										 </div> 
+										 <div class="col-md-2">
+										 	
+										 </div>
+									  </div> 					
+									  <div class="form-group row  " >
+										<label for="Service" class=" control-label col-md-4 text-left"> Service <span class="asterix"> * </span></label>
+										<div class="col-md-6">
+										  <select name='add_info2' rows='5' id='add_info2' class='select2 ' required  ></select> 
 										 </div> 
 										 <div class="col-md-2">
 										 	
@@ -176,7 +185,7 @@
 										 <div class="col-md-2">
 										 	
 										 </div>
-									  </div> {!! Form::hidden('add_info2', $row['add_info2']) !!}{!! Form::hidden('updated_at', $row['updated_at']) !!}{!! Form::hidden('created_at', $row['created_at']) !!}</fieldset></div>
+									  </div> {!! Form::hidden('updated_at', $row['updated_at']) !!}{!! Form::hidden('created_at', $row['created_at']) !!}</fieldset></div>
 
 			<div style="clear:both"></div>	
 				
@@ -196,8 +205,11 @@
 	$(document).ready(function() { 
 		
 		
-		$("#category_id").jCombo("{!! url('ditsportfolios/comboselect?filter=dit_services:id:service_name') !!}",
+		$("#category_id").jCombo("{!! url('ditsportfolios/comboselect?filter=portfolio_category:id:title') !!}",
 		{  selected_value : '{{ $row["category_id"] }}' });
+		
+		$("#add_info2").jCombo("{!! url('ditsportfolios/comboselect?filter=dit_services:id:service_name') !!}",
+		{  selected_value : '{{ $row["add_info2"] }}' });
 		 
 
 		$('.removeCurrentFiles').on('click',function(){

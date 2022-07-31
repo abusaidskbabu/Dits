@@ -82,7 +82,13 @@
 				
 					<tr>
 						<td width='30%' class='label-view text-right'>{{ SiteHelpers::activeLang('Category ', (isset($fields['category_id']['language'])? $fields['category_id']['language'] : array())) }}</td>
-						<td>{{ SiteHelpers::formatLookUp($row->category_id,'category_id','1:dit_services:id:service_name') }} </td>
+						<td>{{ SiteHelpers::formatLookUp($row->category_id,'category_id','1:portfolio_category:id:title') }} </td>
+						
+					</tr>
+				
+					<tr>
+						<td width='30%' class='label-view text-right'>{{ SiteHelpers::activeLang('Category', (isset($fields['add_info2']['language'])? $fields['add_info2']['language'] : array())) }}</td>
+						<td>{{ SiteHelpers::formatLookUp($row->add_info2,'add_info2','1:dit_services:id:service_name') }} </td>
 						
 					</tr>
 				
@@ -101,12 +107,6 @@
 					<tr>
 						<td width='30%' class='label-view text-right'>{{ SiteHelpers::activeLang('Add Info1', (isset($fields['add_info1']['language'])? $fields['add_info1']['language'] : array())) }}</td>
 						<td>{{ $row->add_info1}} </td>
-						
-					</tr>
-				
-					<tr>
-						<td width='30%' class='label-view text-right'>{{ SiteHelpers::activeLang('Add Info2', (isset($fields['add_info2']['language'])? $fields['add_info2']['language'] : array())) }}</td>
-						<td>{{ $row->add_info2}} </td>
 						
 					</tr>
 				

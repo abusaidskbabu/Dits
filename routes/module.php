@@ -238,31 +238,30 @@ Route::resource('howworkdits','HowworkditsController');
 // Start Routes for discover 
 Route::resource('discover','DiscoverController');
 // End Routes for discover 
+
                     
 // Start Routes for optimalsolutions 
 Route::resource('optimalsolutions','OptimalsolutionsController');
 // End Routes for optimalsolutions 
 
-// Start Routes for portfolio 
-Route::resource('portfolio','PortfolioController');
-// End Routes for portfolio 
-
-// Start Routes for portfolio 
-Route::resource('portfolio','PortfolioController');
-// End Routes for portfolio 
+                    
 // Start Routes for allservices 
 Route::resource('allservices','AllservicesController');
 // End Routes for allservices 
 
+                    
 // Start Routes for childservice 
 Route::resource('childservice','ChildserviceController');
 // End Routes for childservice 
+
                     
 // Start Routes for ditsportfolios 
 Route::resource('ditsportfolios','DitsportfoliosController');
-// End Routes for ditsportfolios             
+// End Routes for ditsportfolios 
+
+                    
 // Start Routes for ditsclients 
 Route::resource('ditsclients','DitsclientsController');
 // End Routes for ditsclients 
 
-?>
+                    ?>
