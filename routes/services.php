@@ -13,8 +13,7 @@ Route::resource('services/status','Services\StatusController');
 // Start Routes for websitesettings 
 Route::resource('services/websitesettings','Services\WebsitesettingsController');
 // End Routes for websitesettings 
-
-                    
+              
 // Start Routes for ourgallary 
 Route::resource('services/ourgallary','Services\OurgallaryController');
 // End Routes for ourgallary 
