@@ -254,7 +254,6 @@ Route::resource('portfolio','PortfolioController');
 Route::resource('allservices','AllservicesController');
 // End Routes for allservices 
 
-
 // Start Routes for childservice 
 Route::resource('childservice','ChildserviceController');
 // End Routes for childservice 
