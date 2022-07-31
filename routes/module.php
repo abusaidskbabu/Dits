@@ -246,6 +246,10 @@ Route::resource('optimalsolutions','OptimalsolutionsController');
 // Start Routes for portfolio 
 Route::resource('portfolio','PortfolioController');
 // End Routes for portfolio 
+
+// Start Routes for portfolio 
+Route::resource('portfolio','PortfolioController');
+// End Routes for portfolio 
 // Start Routes for allservices 
 Route::resource('allservices','AllservicesController');
 // End Routes for allservices 
