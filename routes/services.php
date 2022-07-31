@@ -8,8 +8,7 @@ Route::resource('services/homeslider','Services\HomesliderController');
 // Start Routes for status 
 Route::resource('services/status','Services\StatusController');
 // End Routes for status 
-
-                    
+          
 // Start Routes for websitesettings 
 Route::resource('services/websitesettings','Services\WebsitesettingsController');
 // End Routes for websitesettings 
