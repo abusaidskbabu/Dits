@@ -238,7 +238,6 @@ Route::resource('howworkdits','HowworkditsController');
 // Start Routes for discover 
 Route::resource('discover','DiscoverController');
 // End Routes for discover 
-
                     
 // Start Routes for optimalsolutions 
 Route::resource('optimalsolutions','OptimalsolutionsController');
@@ -248,8 +247,6 @@ Route::resource('optimalsolutions','OptimalsolutionsController');
 Route::resource('allservices','AllservicesController');
 // End Routes for allservices 
 
-   
-
 
 // Start Routes for childservice 
 Route::resource('childservice','ChildserviceController');
@@ -258,8 +255,7 @@ Route::resource('childservice','ChildserviceController');
 // Start Routes for ditsportfolios 
 Route::resource('ditsportfolios','DitsportfoliosController');
 // End Routes for ditsportfolios 
-
-                    
+                
 // Start Routes for ditsclients 
 Route::resource('ditsclients','DitsclientsController');
 // End Routes for ditsclients 
