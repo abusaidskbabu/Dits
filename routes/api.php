@@ -22,6 +22,6 @@ Route::get('services/cruds', 'Services\SiteController@cruds');
 Route::group(['middleware' => 'sximoauth'], function () {
 	Route::get('services/profile', 'Services\SiteController@profile');
 	Route::get('services/notification', 'Services\SiteController@notification');
-	include('services.php');
+	//include('services.php');
 });
 
