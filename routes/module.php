@@ -253,7 +253,6 @@ Route::resource('allservices','AllservicesController');
 // Start Routes for childservice 
 Route::resource('childservice','ChildserviceController');
 // End Routes for childservice 
-
                     
 // Start Routes for ditsportfolios 
 Route::resource('ditsportfolios','DitsportfoliosController');
